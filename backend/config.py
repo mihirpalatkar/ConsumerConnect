@@ -13,3 +13,4 @@ class Config:
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    JWT_SECRET_KEY = "consumerconnect-super-secret-key"

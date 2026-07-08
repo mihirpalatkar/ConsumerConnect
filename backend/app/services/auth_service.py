@@ -1,10 +1,16 @@
+from flask_jwt_extended import create_access_token
+
 from app.extensions import db
 from app.models.user import User
-from app.utils.security import hash_password
+from app.utils.security import hash_password, verify_password
 
 
 def register_user(name, email, password):
+    """
+    Register a new user.
+    """
 
+    # Check if email already exists
     existing_user = User.query.filter_by(email=email).first()
 
     if existing_user:
@@ -13,18 +19,55 @@ def register_user(name, email, password):
             "message": "Email already registered"
         }
 
+    # Hash the password
     hashed_password = hash_password(password)
 
+    # Create new user
     user = User(
         name=name,
         email=email,
         password_hash=hashed_password
     )
 
+    # Save user to database
     db.session.add(user)
     db.session.commit()
 
     return {
         "success": True,
         "message": "User registered successfully"
+    }
+
+
+def login_user(email, password):
+    """
+    Authenticate a user and return a JWT token.
+    """
+
+    # Find user by email
+    user = User.query.filter_by(email=email).first()
+
+    # Check if user exists
+    if not user:
+        return {
+            "success": False,
+            "message": "Invalid email or password"
+        }
+
+    # Verify password
+    if not verify_password(user.password_hash, password):
+        return {
+            "success": False,
+            "message": "Invalid email or password"
+        }
+
+    # Generate JWT token
+    access_token = create_access_token(
+        identity=str(user.id)
+    )
+
+    return {
+        "success": True,
+        "message": "Login successful",
+        "access_token": access_token
     }

@@ -6,3 +6,12 @@ Content-Type: application/json
     "email": "rahul@gmail.com",
     "password": "rahul12345"
 }
+###
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "rahul@gmail.com",
+    "password": "rahul12345"
+}
