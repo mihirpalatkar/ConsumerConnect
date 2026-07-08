@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.services.auth_service import register_user, login_user
 
@@ -47,3 +48,14 @@ def login():
         return jsonify(result), 200
 
     return jsonify(result), 401
+@auth_bp.route("/profile", methods=["GET"])
+@jwt_required()
+def profile():
+
+    current_user = get_jwt_identity()
+
+    return jsonify({
+        "success": True,
+        "message": "Protected route accessed successfully",
+        "user_id": current_user
+    }), 200
