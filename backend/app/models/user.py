@@ -24,7 +24,33 @@ class User(db.Model):
         nullable=False
     )
 
+    role = db.Column(
+        db.String(20),
+        default="User",
+        nullable=False
+    )
+
     created_at = db.Column(
         db.DateTime,
         default=datetime.utcnow
     )
+
+    # One User -> Many Issues
+    issues = db.relationship(
+        "Issue",
+        backref="user",
+        lazy=True,
+        cascade="all, delete-orphan"
+    )
+    comments = db.relationship(
+        "Comment",
+        backref="user",
+        lazy=True,
+        cascade="all, delete-orphan"
+    )
+    supports = db.relationship(
+    "Support",
+    backref="user",
+    lazy=True,
+    cascade="all, delete-orphan"
+)

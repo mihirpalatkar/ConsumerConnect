@@ -15,3 +15,635 @@ Content-Type: application/json
     "email": "rahul@gmail.com",
     "password": "rahul12345"
 }
+
+###
+
+GET http://127.0.0.1:5000/api/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDA3OSwianRpIjoiMmJmOWFmNDEtZWY4NS00ZGZmLWJkZjgtMzE3Zjc1OWY4YWI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzAwNzksImNzcmYiOiJlNDI4NTNkOS0zNWRkLTQ2OGUtODJkMy04MjdlNzE1MWEyNjYiLCJleHAiOjE3ODQ3MzA5Nzl9.3uMJXXnjTkJbOeWmJYmgGfEp0mUHXcKKqZOjUfcBd4s
+
+###
+
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NTU4NCwianRpIjoiMWFjOWJmODMtMzAxYS00ZmVhLWJlZTEtZWE3MGI0YzExYzA3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDU1ODQsImNzcmYiOiIxNmYyNGJiOS1jZjk2LTQwZjUtYmE3Yy05NGJhZTEyOTcwZTAiLCJleHAiOjE3ODM1NDY0ODR9.rcPpzWO0vzyUtaCAvkar5u7Q73p130Kv4gSiQZAwlRQ
+Content-Type: application/json
+
+{
+    "title":"Jio Fiber keeps disconnecting",
+    "description":"Internet disconnects every 5 minutes.",
+    "company":"Jio",
+    "category":"Telecom"
+}
+
+###
+
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NTU4NCwianRpIjoiMWFjOWJmODMtMzAxYS00ZmVhLWJlZTEtZWE3MGI0YzExYzA3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDU1ODQsImNzcmYiOiIxNmYyNGJiOS1jZjk2LTQwZjUtYmE3Yy05NGJhZTEyOTcwZTAiLCJleHAiOjE3ODM1NDY0ODR9.rcPpzWO0vzyUtaCAvkar5u7Q73p130Kv4gSiQZAwlRQ
+
+###
+
+GET http://127.0.0.1:5000/api/issues/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NTU4NCwianRpIjoiMWFjOWJmODMtMzAxYS00ZmVhLWJlZTEtZWE3MGI0YzExYzA3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDU1ODQsImNzcmYiOiIxNmYyNGJiOS1jZjk2LTQwZjUtYmE3Yy05NGJhZTEyOTcwZTAiLCJleHAiOjE3ODM1NDY0ODR9.rcPpzWO0vzyUtaCAvkar5u7Q73p130Kv4gSiQZAwlRQ
+
+###
+
+PUT http://127.0.0.1:5000/api/issues/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NjU4OSwianRpIjoiN2UzY2U3MGMtZTdkMi00MmI0LWIwYWUtNjIzZDM0YTRhMzJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDY1ODksImNzcmYiOiJhZDMzMjc4MS00NmIzLTQ2MGEtOTU0OC0wN2IxNjNlMDdkMGMiLCJleHAiOjE3ODM1NDc0ODl9.cCcM2LHhIKBAGlakkW2lldC9SyqVexSLurfLHYs5WHg
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "severity": "Low"
+}
+
+###
+
+GET http://127.0.0.1:5000/api/issues/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NjU4OSwianRpIjoiN2UzY2U3MGMtZTdkMi00MmI0LWIwYWUtNjIzZDM0YTRhMzJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDY1ODksImNzcmYiOiJhZDMzMjc4MS00NmIzLTQ2MGEtOTU0OC0wN2IxNjNlMDdkMGMiLCJleHAiOjE3ODM1NDc0ODl9.cCcM2LHhIKBAGlakkW2lldC9SyqVexSLurfLHYs5WHg
+
+###
+
+DELETE http://127.0.0.1:5000/api/issues/1
+Authorization: Bearer 
+
+###
+
+GET http://127.0.0.1:5000/api/issues/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4MzU0NjU4OSwianRpIjoiN2UzY2U3MGMtZTdkMi00MmI0LWIwYWUtNjIzZDM0YTRhMzJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODM1NDY1ODksImNzcmYiOiJhZDMzMjc4MS00NmIzLTQ2MGEtOTU0OC0wN2IxNjNlMDdkMGMiLCJleHAiOjE3ODM1NDc0ODl9.cCcM2LHhIKBAGlakkW2lldC9SyqVexSLurfLHYs5WHg
+###
+
+POST http://127.0.0.1:5000/api/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDEzNjYzOCwianRpIjoiMjQ4MmZiYWEtNDFiNC00MmQyLWJlYzQtNjE2ZTliYzdiMGU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQxMzY2MzgsImNzcmYiOiI2NmE2MTA2Zi1lZDk4LTQ1ODAtYmY2ZS00M2JiZDg4ZDQ1MWYiLCJleHAiOjE3ODQxMzc1Mzh9.tjKhw7OyXX2q3W4fCxsdthkZSllSIr7Jf2qQ1CafrJQ
+Content-Type: application/json
+
+{
+    "content": "I am facing the same issue.",
+    "issue_id": 4
+}
+###
+
+GET http://127.0.0.1:5000/api/comments/issue/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDEzNjYzOCwianRpIjoiMjQ4MmZiYWEtNDFiNC00MmQyLWJlYzQtNjE2ZTliYzdiMGU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQxMzY2MzgsImNzcmYiOiI2NmE2MTA2Zi1lZDk4LTQ1ODAtYmY2ZS00M2JiZDg4ZDQ1MWYiLCJleHAiOjE3ODQxMzc1Mzh9.tjKhw7OyXX2q3W4fCxsdthkZSllSIr7Jf2qQ1CafrJQ
+
+###
+
+###
+
+DELETE http://127.0.0.1:5000/api/comments/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDEzNjYzOCwianRpIjoiMjQ4MmZiYWEtNDFiNC00MmQyLWJlYzQtNjE2ZTliYzdiMGU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQxMzY2MzgsImNzcmYiOiI2NmE2MTA2Zi1lZDk4LTQ1ODAtYmY2ZS00M2JiZDg4ZDQ1MWYiLCJleHAiOjE3ODQxMzc1Mzh9.tjKhw7OyXX2q3W4fCxsdthkZSllSIr7Jf2qQ1CafrJQ
+
+###
+
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDE3MiwianRpIjoiOGRlZjhhOWYtMmU2OC00MTc1LWFhYmQtMGIyZmI3MTU3NmE4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzAxNzIsImNzcmYiOiJjNGFlZjM3ZC04MzE2LTQ1NjMtYWYxZi1iZDE1ZDExNjI2NTMiLCJleHAiOjE3ODQ3MzEwNzJ9.cipDRlwgInxEA6DMC7J2cB8_trH4nyCKalJZfnWbxG4
+Content-Type: application/json
+
+{
+    "title": "Jio Fiber keeps disconnecting",
+    "description": "Internet disconnects every 5 minutes.",
+    "company": "Jio",
+    "category": "Telecom"
+
+}
+
+###
+
+POST http://127.0.0.1:5000/api/supports/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDE3MiwianRpIjoiOGRlZjhhOWYtMmU2OC00MTc1LWFhYmQtMGIyZmI3MTU3NmE4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzAxNzIsImNzcmYiOiJjNGFlZjM3ZC04MzE2LTQ1NjMtYWYxZi1iZDE1ZDExNjI2NTMiLCJleHAiOjE3ODQ3MzEwNzJ9.cipDRlwgInxEA6DMC7J2cB8_trH4nyCKalJZfnWbxG4
+
+###
+
+GET http://127.0.0.1:5000/api/supports/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDEzNjYzOCwianRpIjoiMjQ4MmZiYWEtNDFiNC00MmQyLWJlYzQtNjE2ZTliYzdiMGU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQxMzY2MzgsImNzcmYiOiI2NmE2MTA2Zi1lZDk4LTQ1ODAtYmY2ZS00M2JiZDg4ZDQ1MWYiLCJleHAiOjE3ODQxMzc1Mzh9.tjKhw7OyXX2q3W4fCxsdthkZSllSIr7Jf2qQ1CafrJQ
+
+###
+
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDEzNjYzOCwianRpIjoiMjQ4MmZiYWEtNDFiNC00MmQyLWJlYzQtNjE2ZTliYzdiMGU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQxMzY2MzgsImNzcmYiOiI2NmE2MTA2Zi1lZDk4LTQ1ODAtYmY2ZS00M2JiZDg4ZDQ1MWYiLCJleHAiOjE3ODQxMzc1Mzh9.tjKhw7OyXX2q3W4fCxsdthkZSllSIr7Jf2qQ1CafrJQ
+
+###
+
+GET http://127.0.0.1:5000/api/issues/4
+
+###
+
+POST http://127.0.0.1:5000/api/comments/reply
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDQ4MywianRpIjoiZDU1Y2MwMmItMjlhYi00N2Y3LTg0NzItNjBiNzBhZjE3MmU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzA0ODMsImNzcmYiOiIxOTlmNWFiYS05NTNiLTQ5MGMtYTAzNy1jMTczMDE1NDY1MWIiLCJleHAiOjE3ODQ3MzEzODN9.R2FmT1rjicH3g3jq_EjGGion8wblYyhNB1SkMfyMxe8
+Content-Type: application/json
+
+{
+    "content":"Same issue with Airtel",
+    "issue_id":7,
+    "parent_id":1
+}
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "your_email@example.com",
+    "password": "your_password"
+}
+
+###
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "rahul@gmail.com",
+    "password": "rahul12345"
+}
+
+###
+
+POST http://127.0.0.1:5000/api/comments/reply
+Authorization: Bearer eyJhbGceyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDU2OCwianRpIjoiYzk1OWY2Y2EtM2FlNS00OWEzLTkxNjMtNDYwZTQ0NWZhZjkwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzA1NjgsImNzcmYiOiJkMWFhZThjYy1lZGNlLTQ4MzQtOTgxMS1mN2EwMjJmZDVmMjQiLCJleHAiOjE3ODQ3MzE0Njh9.b0bkvyiIlqQ__1PK3iaVTM-8QD0GYMUizUD01VgD-bsiOiJIUzI1NiIs...
+Content-Type: application/json
+
+{
+    "content": "Same issue with Airtel",
+    "issue_id": 8,
+    "parent_id": 1
+}
+
+###
+POST http://127.0.0.1:5000/api/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDcyOSwianRpIjoiYjQ1MzI0ZWQtZWU5Mi00MWVjLTlmMjEtMjE4ZWNkYjk1NzllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzA3MjksImNzcmYiOiJkNmEyM2M5NS02MjI2LTQ5MDEtODY5NS1iMGQ2ZjBhNjdkOTUiLCJleHAiOjE3ODQ3MzE2Mjl9.i8_6UvaxBJLW1w-F3pMkwPyi2d14vHpKW3gLr6Gq-Nk
+Content-Type: application/json
+
+{
+    "content": "My internet has been slow for the past week.",
+    "issue_id": 8
+}
+
+###
+
+POST http://127.0.0.1:5000/api/comments/reply
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+Content-Type: application/json
+
+{
+    "content": "I'm facing the same problem.",
+    "issue_id": 8,
+    "parent_id": 4
+}
+
+###
+
+GET http://127.0.0.1:5000/api/comments/issue/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDczMDcyOSwianRpIjoiYjQ1MzI0ZWQtZWU5Mi00MWVjLTlmMjEtMjE4ZWNkYjk1NzllIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ3MzA3MjksImNzcmYiOiJkNmEyM2M5NS02MjI2LTQ5MDEtODY5NS1iMGQ2ZjBhNjdkOTUiLCJleHAiOjE3ODQ3MzE2Mjl9.i8_6UvaxBJLW1w-F3pMkwPyi2d14vHpKW3gLr6Gq-Nk
+
+###
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+GET http://127.0.0.1:5000/api/issues?company=Jio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+
+GET http://127.0.0.1:5000/api/issues?category=Internet
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+
+GET http://127.0.0.1:5000/api/issues?status=Open
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+
+GET http://127.0.0.1:5000/api/issues?severity=High
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+
+GET http://127.0.0.1:5000/api/issues?search=slow
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+
+GET http://127.0.0.1:5000/api/issues?company=Jio&status=Open
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkwNTk4NywianRpIjoiZGVhZmI4YWEtYjQxNy00N2JjLWI5MTItNTdkZjkyNWE5NjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MDU5ODcsImNzcmYiOiI0YjFhMTZmMi1mMzQzLTQ2ZWMtYmU0Yi0zYTMwZmRjOTMzMWIiLCJleHAiOjE3ODQ5MDY4ODd9.1fqJfV8EfVU58VUFe5_6D6srL6ZHqU7GwM_K9bhFq4k
+
+###
+PATCH http://127.0.0.1:5000/api/issues/1/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkyMTg3MSwianRpIjoiNWI1NzEzNGQtMjFhNS00NDRkLWFlZmItZDA5MDUwMTg2NTBmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MjE4NzEsImNzcmYiOiI3Yjc3ZmRmYi04ODY0LTRmNTEtOTdmNi1jYzIwNjMxYzQwZGUiLCJleHAiOjE3ODQ5MjI3NzF9.aiKsvirNbI5810XMQ7xQDsEXxpC8jnOyntmBNs_12t0
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "resolution_note": "Road repaired."
+}
+
+###
+PATCH http://127.0.0.1:5000/api/issues/8/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDkyMjI3MSwianRpIjoiYmNkOTUwZGUtMmI4Zi00ZmM0LWFlY2MtNTQyNjVkYTFkNmY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5MjIyNzEsImNzcmYiOiI4NzFmZGRiZS0zNTBhLTQ3NGUtODRhYy1lMjEzZGZlOGQ0NmUiLCJleHAiOjE3ODQ5MjMxNzF9.MWbPP3YRTeBpykcZGOTf2LzuAZwlcBowu65ooLdYbCo
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "resolution_note": "Road repaired successfully."
+}
+###
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "rahul@gmail.com",
+    "password": "rahul12345"
+}
+
+###
+http://127.0.0.1:5000/api/notifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjA1MiwianRpIjoiZTlmZDJiMDEtNTMyMy00OTZjLWI5NzktOWVhYTk5ODY0YTI0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3ODQ5NjYwNTIsImNzcmYiOiI0M2ExYTc4MS0zMTIxLTQ1NGUtODA3ZS01ZDRlNWVlN2RjMjEiLCJleHAiOjE3ODQ5NjY5NTJ9.KEmRrtIM2Hw9vT_2Ej36CbnPdOgIPmu0sMhti5QEMXQ
+###
+POST http://127.0.0.1:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "User One",
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+### Register User Two
+
+POST http://127.0.0.1:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "User Two",
+    "email": "user2@gmail.com",
+    "password": "123456"
+}
+### Login User One
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+### Login User One
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+### Create Issue
+
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjYzMCwianRpIjoiMWUwNmQxODItMTdhNi00MTAyLTlkYWQtNWM0NjFlMmFhMWY0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY2MzAsImNzcmYiOiJjOTQ0NzI2OC01MThkLTQxMGEtODZiOS1kZjIyZGQ4YmE2MzIiLCJleHAiOjE3ODQ5Njc1MzB9.SbNWHDFBUIFpulwQobWG_8J5HvXd-bzxHJDV5HckJ0Q
+Content-Type: multipart/form-data; boundary=Boundary
+
+--Boundary
+Content-Disposition: form-data; name="title"
+
+Pothole near Dharampeth
+--Boundary
+Content-Disposition: form-data; name="description"
+
+Huge pothole causing accidents every day.
+--Boundary
+Content-Disposition: form-data; name="company"
+
+Nagpur Municipal Corporation
+--Boundary
+Content-Disposition: form-data; name="category"
+
+Road
+--Boundary--
+
+### Login User Two
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user2@gmail.com",
+    "password": "123456"
+}
+
+### Comment on Issue 9
+
+POST http://127.0.0.1:5000/api/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2Njc3NCwianRpIjoiZmJkYzljZjMtYjY3NS00MmI0LTk1NTAtZWUyNmUwYzhkNjU1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODQ5NjY3NzQsImNzcmYiOiIxYjQ1ZmZmNy00NzNlLTRhZGItODM3NC1jNzI3NTE1YmM3NjYiLCJleHAiOjE3ODQ5Njc2NzR9.yNcexnBcOXC01Vt4LspM5CZ9PN8-e-3jwDstZyADVVU
+
+{
+    "content": "This problem exists near my house too.",
+    "issue_id": 9
+}
+
+### Login User One
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+### Get Notifications
+
+GET http://127.0.0.1:5000/api/notifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjgxNSwianRpIjoiZTczODkyZWYtNWQxNS00NjliLWExNWQtYWU0OGI1MmFmNGVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY4MTUsImNzcmYiOiIyNDFlZWVmNC04ZDYyLTRlZTUtOTk4My05ODQxMTRjN2RhMGMiLCJleHAiOjE3ODQ5Njc3MTV9.fjOEK8JkILNuE94KD8G815jP5C5XsE7AXv3iehB4XNU
+### Get Unread Count
+
+GET http://127.0.0.1:5000/api/notifications/unread-count
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjgxNSwianRpIjoiZTczODkyZWYtNWQxNS00NjliLWExNWQtYWU0OGI1MmFmNGVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY4MTUsImNzcmYiOiIyNDFlZWVmNC04ZDYyLTRlZTUtOTk4My05ODQxMTRjN2RhMGMiLCJleHAiOjE3ODQ5Njc3MTV9.fjOEK8JkILNuE94KD8G815jP5C5XsE7AXv3iehB4XNU
+
+### Mark Notification Read
+
+PATCH http://127.0.0.1:5000/api/notifications/1/read
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjgxNSwianRpIjoiZTczODkyZWYtNWQxNS00NjliLWExNWQtYWU0OGI1MmFmNGVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY4MTUsImNzcmYiOiIyNDFlZWVmNC04ZDYyLTRlZTUtOTk4My05ODQxMTRjN2RhMGMiLCJleHAiOjE3ODQ5Njc3MTV9.fjOEK8JkILNuE94KD8G815jP5C5XsE7AXv3iehB4XNU
+### Get Unread Count Again
+
+GET http://127.0.0.1:5000/api/notifications/unread-count
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjgxNSwianRpIjoiZTczODkyZWYtNWQxNS00NjliLWExNWQtYWU0OGI1MmFmNGVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY4MTUsImNzcmYiOiIyNDFlZWVmNC04ZDYyLTRlZTUtOTk4My05ODQxMTRjN2RhMGMiLCJleHAiOjE3ODQ5Njc3MTV9.fjOEK8JkILNuE94KD8G815jP5C5XsE7AXv3iehB4XNU
+### Mark All Notifications Read
+
+PATCH http://127.0.0.1:5000/api/notifications/read-all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2NjgxNSwianRpIjoiZTczODkyZWYtNWQxNS00NjliLWExNWQtYWU0OGI1MmFmNGVlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NjY4MTUsImNzcmYiOiIyNDFlZWVmNC04ZDYyLTRlZTUtOTk4My05ODQxMTRjN2RhMGMiLCJleHAiOjE3ODQ5Njc3MTV9.fjOEK8JkILNuE94KD8G815jP5C5XsE7AXv3iehB4XNU
+
+### Register Company
+
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "name": "Nagpur Municipal Corporation",
+    "email": "nmc@test.com",
+    "password": "123456"
+}
+### Login Company
+
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email": "nmc@test.com",
+    "password": "123456"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2ODU3NiwianRpIjoiYTYyZGUwZTMtMGIwMi00NWU1LWIxYjgtMWUwNmU0MGI4OTg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MSIsIm5iZiI6MTc4NDk2ODU3NiwiY3NyZiI6ImRhZDNiMjE4LTYxODktNGZjMS1hMTUwLWIyMDFkYTE3NjQyNCIsImV4cCI6MTc4NDk2OTQ3Nn0._gI2gUIvp04_HV-Gh9fytzSs5KkXqvQsbIm62DsOByo
+###
+POST http://127.0.0.1:5000/api/company/responses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2ODU3NiwianRpIjoiYTYyZGUwZTMtMGIwMi00NWU1LWIxYjgtMWUwNmU0MGI4OTg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MSIsIm5iZiI6MTc4NDk2ODU3NiwiY3NyZiI6ImRhZDNiMjE4LTYxODktNGZjMS1hMTUwLWIyMDFkYTE3NjQyNCIsImV4cCI6MTc4NDk2OTQ3Nn0._gI2gUIvp04_HV-Gh9fytzSs5KkXqvQsbIm62DsOByo
+Content-Type: application/json
+
+{
+    "issue_id": 9,
+    "response": "Our maintenance team has been assigned. The issue will be resolved within 48 hours."
+}
+
+###
+POST http://127.0.0.1:5000/api/company/responses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2ODU3NiwianRpIjoiYTYyZGUwZTMtMGIwMi00NWU1LWIxYjgtMWUwNmU0MGI4OTg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MSIsIm5iZiI6MTc4NDk2ODU3NiwiY3NyZiI6ImRhZDNiMjE4LTYxODktNGZjMS1hMTUwLWIyMDFkYTE3NjQyNCIsImV4cCI6MTc4NDk2OTQ3Nn0._gI2gUIvp04_HV-Gh9fytzSs5KkXqvQsbIm62DsOByo
+Content-Type: application/json
+
+{
+    "issue_id": 9,
+    "response": "Our maintenance team has been assigned. The issue will be resolved within 48 hours."
+}
+
+###
+GET http://127.0.0.1:5000/api/company/responses/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2ODU3NiwianRpIjoiYTYyZGUwZTMtMGIwMi00NWU1LWIxYjgtMWUwNmU0MGI4OTg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MSIsIm5iZiI6MTc4NDk2ODU3NiwiY3NyZiI6ImRhZDNiMjE4LTYxODktNGZjMS1hMTUwLWIyMDFkYTE3NjQyNCIsImV4cCI6MTc4NDk2OTQ3Nn0._gI2gUIvp04_HV-Gh9fytzSs5KkXqvQsbIm62DsOByo
+
+###
+POST http://127.0.0.1:5000/api/company/responses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk2ODU3NiwianRpIjoiYTYyZGUwZTMtMGIwMi00NWU1LWIxYjgtMWUwNmU0MGI4OTg2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MSIsIm5iZiI6MTc4NDk2ODU3NiwiY3NyZiI6ImRhZDNiMjE4LTYxODktNGZjMS1hMTUwLWIyMDFkYTE3NjQyNCIsImV4cCI6MTc4NDk2OTQ3Nn0._gI2gUIvp04_HV-Gh9fytzSs5KkXqvQsbIm62DsOByo
+Content-Type: application/json
+
+{
+    "issue_id": 9,
+    "response": "Fake company response"
+}
+
+###
+
+### Duplicate Issue Test
+
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk3NjcwNiwianRpIjoiNTJiN2RiMDAtZjFlZC00ZWM1LTgwMDMtODY5ZTAwNDhkYTJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NzY3MDYsImNzcmYiOiJiOWM4M2UyMy1jY2M4LTQ0ZDMtOGUyYi01YTU5YWI1MWYwODciLCJleHAiOjE3ODQ5Nzc2MDZ9.dnS-QKzzOvHupv2pM4a6vuk7yfXLkDEalyLOaROh6xs
+Content-Type: multipart/form-data; boundary=Boundary
+
+--Boundary
+Content-Disposition: form-data; name="title"
+
+Huge pothole near Dharampeth
+
+--Boundary
+Content-Disposition: form-data; name="description"
+
+Road has a very large pothole causing accidents.
+
+--Boundary
+Content-Disposition: form-data; name="company"
+
+Nagpur Municipal Corporation
+
+--Boundary
+Content-Disposition: form-data; name="category"
+
+Roads
+
+--Boundary--
+### Login User One
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+
+
+### New Issue Test
+
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk3NjcwNiwianRpIjoiNTJiN2RiMDAtZjFlZC00ZWM1LTgwMDMtODY5ZTAwNDhkYTJiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5NzY3MDYsImNzcmYiOiJiOWM4M2UyMy1jY2M4LTQ0ZDMtOGUyYi01YTU5YWI1MWYwODciLCJleHAiOjE3ODQ5Nzc2MDZ9.dnS-QKzzOvHupv2pM4a6vuk7yfXLkDEalyLOaROh6xs
+Content-Type: multipart/form-data; boundary=Boundary
+
+--Boundary
+Content-Disposition: form-data; name="title"
+
+Street light not working in Civil Lines
+
+--Boundary
+Content-Disposition: form-data; name="description"
+
+Three street lights have stopped working since last week.
+
+--Boundary
+Content-Disposition: form-data; name="company"
+
+Nagpur Municipal Corporation
+
+--Boundary
+Content-Disposition: form-data; name="category"
+
+Electricity
+
+--Boundary--
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk3NzU0MywianRpIjoiNDAzNTRhYzEtZTYwZi00MTkwLThkOTYtMjBiYzI2YjRjYTRmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5Nzc1NDMsImNzcmYiOiJjOTE4OTNhYy02ODEwLTQyOWYtYTI2Ny01ODZkMWQ1YzAzZTAiLCJleHAiOjE3ODQ5Nzg0NDN9.sCYcrZLIzam7_wOdUysnS0SzCSYKfCNXdZKB2jjVyfw
+Content-Type: multipart/form-data; boundary=Boundary
+
+--Boundary
+Content-Disposition: form-data; name="title"
+
+Street lights not working
+
+--Boundary
+Content-Disposition: form-data; name="description"
+
+The whole area is dark because all the lights are off.
+
+--Boundary
+Content-Disposition: form-data; name="company"
+
+Nagpur Municipal Corporation
+
+--Boundary--
+###
+GET http://127.0.0.1:5000/api/issues/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NDk3NzU0MywianRpIjoiNDAzNTRhYzEtZTYwZi00MTkwLThkOTYtMjBiYzI2YjRjYTRmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODQ5Nzc1NDMsImNzcmYiOiJjOTE4OTNhYy02ODEwLTQyOWYtYTI2Ny01ODZkMWQ1YzAzZTAiLCJleHAiOjE3ODQ5Nzg0NDN9.sCYcrZLIzam7_wOdUysnS0SzCSYKfCNXdZKB2jjVyfw
+
+###
+GET http://127.0.0.1:5000/api/dashboard/overview
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE0OTA4MSwianRpIjoiYTM3ZmVhNWQtZjAyOS00ZWIzLWE2ZjItMWVhZDM4NmFjNWU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNDkwODEsImNzcmYiOiJlMzdkZTM2Ny1kZjY5LTQ5MDktODYxZC1lNDY0NjBlZjBhNzIiLCJleHAiOjE3ODUxNDk5ODF9.HKJJoQhQFMrVES5176ILv0LhLoXMF_m7htmGL2NFL4o
+
+###
+GET http://127.0.0.1:5000/api/dashboard/category-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE0OTM4NiwianRpIjoiZmM4ZDI1MzQtNWVkMy00NWEzLTg5NWEtNzQ3MTk1MWQ3OTY5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNDkzODYsImNzcmYiOiJjMWE0MmQ2Zi1mOWQyLTQ5MjEtYTNhMS04ZTBjODExZGFhMTgiLCJleHAiOjE3ODUxNTAyODZ9.pFZvQ3gkL_-nSh4uB924dtr9ckupMkX0S-cCBr7C06c 
+
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+###
+http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE0OTk1MSwianRpIjoiMDU1YTkyNjItNWIwMC00YzQ4LThhYjctZDlkMDQ0OGE2ZTgzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNDk5NTEsImNzcmYiOiI0NGFjNTYwYy1mOGFmLTQ5ZmEtYjg2YS0wZDU3ZDY5MGRlMjgiLCJleHAiOjE3ODUxNTA4NTF9.VKnh7A1uFaVWvTWlFxePS7wokEWLW8Kk3TuW-7a_O8k
+
+Content-Type: application/json
+{
+    "title": "Power outage",
+    "description": "There has been no electricity in my area for the last 12 hours.",
+    "company": "MSEB"
+}
+###
+http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MTIyNywianRpIjoiYzg5NDRiZDgtODc3Ny00OGU3LWE1NWQtMjBjZDcwOTk5NmU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTEyMjcsImNzcmYiOiI4MGIzMDFlZC1hYzVkLTRiNDctYWM5My0yMzg3NjA1ZWU3ZjEiLCJleHAiOjE3ODUxNTIxMjd9.ajCxqLFiVzIGEtwOxzrXsKCKrSAeQr8wyOMnhIkfkyo
+
+Content-Type: application/json
+{
+    "title": "Bus stop shelter damaged during rains",
+    "description": "The bus stop shelter near Sitabuldi Metro Station has been severely damaged after the recent rains. The roof is leaking and several metal sheets are loose, making it unsafe for commuters waiting for buses. Despite multiple complaints from local residents, no repair work has started. Immediate action is required to prevent accidents.",
+    "company": "Nagpur Municipal Corporation"
+}
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MTIyNywianRpIjoiYzg5NDRiZDgtODc3Ny00OGU3LWE1NWQtMjBjZDcwOTk5NmU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTEyMjcsImNzcmYiOiI4MGIzMDFlZC1hYzVkLTRiNDctYWM5My0yMzg3NjA1ZWU3ZjEiLCJleHAiOjE3ODUxNTIxMjd9.ajCxqLFiVzIGEtwOxzrXsKCKrSAeQr8wyOMnhIkfkyo
+Content-Type: application/x-www-form-urlencoded
+
+title=Bus stop shelter damaged during rains&
+description=The bus stop shelter near Sitabuldi Metro Station has been severely damaged after the recent rains. The roof is leaking and several metal sheets are loose, making it unsafe for commuters waiting for buses.&
+company=Nagpur Municipal Corporation
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MTIyNywianRpIjoiYzg5NDRiZDgtODc3Ny00OGU3LWE1NWQtMjBjZDcwOTk5NmU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTEyMjcsImNzcmYiOiI4MGIzMDFlZC1hYzVkLTRiNDctYWM5My0yMzg3NjA1ZWU3ZjEiLCJleHAiOjE3ODUxNTIxMjd9.ajCxqLFiVzIGEtwOxzrXsKCKrSAeQr8wyOMnhIkfkyo
+Content-Type: application/x-www-form-urlencoded
+
+title=Bus stop shelter damaged during rains&description=The bus stop shelter near Sitabuldi Metro Station has been severely damaged after the recent rains. The roof is leaking and several metal sheets are loose, making it unsafe for commuters waiting for buses. Immediate repair is required.&company=Nagpur Municipal Corporation
+
+###
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MTIyNywianRpIjoiYzg5NDRiZDgtODc3Ny00OGU3LWE1NWQtMjBjZDcwOTk5NmU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTEyMjcsImNzcmYiOiI4MGIzMDFlZC1hYzVkLTRiNDctYWM5My0yMzg3NjA1ZWU3ZjEiLCJleHAiOjE3ODUxNTIxMjd9.ajCxqLFiVzIGEtwOxzrXsKCKrSAeQr8wyOMnhIkfkyo
+###
+GET http://127.0.0.1:5000/api/dashboard/severity-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MjMyMSwianRpIjoiMmJlMTNhMGItNTliMi00MmJkLTk0ODctMzE1YWNjODBjZmI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTIzMjEsImNzcmYiOiJkNGVkZWM2NC1jNzkyLTRhZDgtYTk0Yi1lNTVlYzg5YTc1NGEiLCJleHAiOjE3ODUxNTMyMjF9.w5q9SRPARjiIfkcl4HAT3iZ7G8klbqnDzm6VbGMNvvI
+
+###
+
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://127.0.0.1:5000/api/dashboard/status-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MjU2NSwianRpIjoiOWRlODIwMWMtOGM5MC00MzNhLWI5MDYtZDVlM2UxNmZiMTIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTI1NjUsImNzcmYiOiI4NzY4ZGMwNi02Zjc3LTQ5Y2ItOTZjOC1mODUyNzE4ZjRkYjIiLCJleHAiOjE3ODUxNTM0NjV9.DwxvPUDpS9zi1Tv0EwTtGzLKlPCTTVIKP0aWhU2FIjk
+
+###
+GET http://127.0.0.1:5000/api/dashboard/monthly-trends
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1MzgyMCwianRpIjoiZWUzMzYxZjctNzBiYy00NmJmLTllMGItMzhjNjlhYTc4NmFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTM4MjAsImNzcmYiOiI1YTNmY2NhNy1mNWQ3LTQ4NGMtYjJmZC04MDc3ODNmY2RjZDIiLCJleHAiOjE3ODUxNTQ3MjB9.6hLkA7urpnx66jjvS904lge1c4p3EvH10zpnx--ra-s
+
+###
+GET http://127.0.0.1:5000/api/dashboard/top-companies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1NDk3OSwianRpIjoiY2U2NDc5ZTgtNTk4OS00NDU1LWFhOWUtZGNkZjdlYmE5MWViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTQ5NzksImNzcmYiOiJlZDEyMmQ5My00YjFiLTQ1NTAtOGExNS03ZTA1YWQ0ZTMwZDMiLCJleHAiOjE3ODUxNTU4Nzl9.7M9Fz61Crul9aZf0nFAtys2i7AqY3Xrh9qrGLtCy_KQ
+###
+GET http://127.0.0.1:5000/api/dashboard/resolution-statistics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1NzczNSwianRpIjoiYzc3N2IzODktYTc4ZS00MTE0LWJmZDUtYjJjMWRhNTkzZWE3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTc3MzUsImNzcmYiOiI4ZDQ5MjM2OC03ZTQ1LTRmMTMtYTE5NC0yYWIyNjA2OTlkZWUiLCJleHAiOjE3ODUxNTg2MzUsInJvbGUiOiJVc2VyIn0.I-HQhC9C2zW584iyN3z5vcE8_oWW5JmbyeIFyPpLN3k
+
+###
+GET http://127.0.0.1:5000/api/admin/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE1ODEzMiwianRpIjoiNzBjNWU2NWUtZmUwYi00ODliLTg5NWEtMjQyMjI5NWFhNjY0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNTgxMzIsImNzcmYiOiIyZjQzNGYxOS01OGRlLTRiN2ItOWY5NS1jYzhlNDRmOWY1NjciLCJleHAiOjE3ODUxNTkwMzIsInJvbGUiOiJBZG1pbiJ9.jrZL7LYrKy87QVVbGOGymThgT9Xa3Y1DJt_0w9FDXdE
+
+###
+GET http://127.0.0.1:5000/api/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MDM2MCwianRpIjoiNmNkOGUyMDgtMjg2Yy00NWZhLTliMDktYTgzNjQ4OWFiZTgxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNjAzNjAsImNzcmYiOiI5ZTA5MzIwMi04MjUxLTRkZGMtOGRlNS1mNmE0MDg3MzQxMWMiLCJleHAiOjE3ODUxNjEyNjAsInJvbGUiOiJBZG1pbiJ9.3sbR5gLsgHT9UgLRbFVzgIeBwa1FW9Ct_FOayRWjmuQ
+###
+GET http://127.0.0.1:5000/api/admin/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MDM2MCwianRpIjoiNmNkOGUyMDgtMjg2Yy00NWZhLTliMDktYTgzNjQ4OWFiZTgxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNjAzNjAsImNzcmYiOiI5ZTA5MzIwMi04MjUxLTRkZGMtOGRlNS1mNmE0MDg3MzQxMWMiLCJleHAiOjE3ODUxNjEyNjAsInJvbGUiOiJBZG1pbiJ9.3sbR5gLsgHT9UgLRbFVzgIeBwa1FW9Ct_FOayRWjmuQ
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "name": "Amazon",
+    "email": "amazon@gmail.com",
+    "password": "12345678"
+}
+
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email": "amazon@gmail.com",
+    "password": "12345678"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MjA1MiwianRpIjoiMTQ5ZGQ2ZDktODEzOC00ZmZkLWEzMGYtMjE1ZDcyNGNlMTg5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTE2MjA1MiwiY3NyZiI6IjUzYjc4ODY1LTMxYTctNGQ5Yy1hMjAzLTk2MTc5MDcxNmEwMCIsImV4cCI6MTc4NTE2Mjk1Mn0.hR2ORCSF37qysaFV3A70XHClyJogVanHj98g_Kvjo2s

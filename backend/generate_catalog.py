@@ -1,0 +1,863 @@
+"""
+Master Catalog Data
+ConsumerConnect
+"""
+
+CATALOG = {
+
+    "Electronics": {
+
+        "Mobiles": [
+            "Apple iPhone 16",
+            "Apple iPhone 16 Plus",
+            "Apple iPhone 16 Pro",
+            "Apple iPhone 16 Pro Max",
+
+            "Samsung Galaxy S25",
+            "Samsung Galaxy S25+",
+            "Samsung Galaxy S25 Ultra",
+
+            "Google Pixel 10",
+            "Google Pixel 10 Pro",
+
+            "OnePlus 13",
+            "OnePlus 13R",
+
+            "Nothing Phone 3",
+            "Nothing Phone 3a",
+
+            "Xiaomi 16",
+            "Xiaomi 16 Pro",
+
+            "Vivo X300",
+            "Vivo V60",
+
+            "Oppo Find X9",
+            "Realme GT 8",
+
+            "Motorola Edge 60 Pro",
+            "Motorola G100",
+
+            "Honor Magic 8",
+
+            "Asus ROG Phone 10",
+
+            "iQOO 15"
+        ],
+
+        "Laptops":[
+            "MacBook Air M4",
+            "MacBook Pro M4",
+
+            "Dell Inspiron 15",
+            "Dell XPS 13",
+            "Dell G16",
+
+            "HP Pavilion",
+            "HP Victus",
+            "HP Omen",
+
+            "Lenovo IdeaPad Slim 5",
+            "Lenovo ThinkPad X1",
+            "Lenovo Legion 5",
+
+            "ASUS Vivobook",
+            "ASUS Zenbook",
+            "ASUS ROG Zephyrus",
+
+            "Acer Aspire 7",
+            "Acer Nitro V",
+
+            "MSI Katana",
+            "MSI Stealth",
+
+            "Samsung Galaxy Book",
+
+            "LG Gram"
+        ],
+
+        "Tablets":[
+            "iPad Air",
+            "iPad Pro",
+            "Samsung Galaxy Tab S10",
+            "Lenovo Tab Plus",
+            "Xiaomi Pad 8",
+            "OnePlus Pad 3"
+        ],
+
+        "Televisions":[
+            "Samsung 55-inch QLED TV",
+            "Sony Bravia 65-inch",
+            "LG OLED TV",
+            "Mi Smart TV",
+            "TCL 4K TV",
+            "Hisense Smart TV"
+        ],
+
+        "Audio":[
+            "Apple AirPods Pro",
+            "Samsung Galaxy Buds",
+            "Sony WH-1000XM6",
+            "JBL Flip 7",
+            "Boat Airdopes",
+            "Noise Buds",
+            "Realme Buds Air",
+            "Marshall Speaker"
+        ],
+
+        "Gaming":[
+            "PlayStation 5",
+            "Xbox Series X",
+            "Nintendo Switch OLED",
+            "Steam Deck"
+        ],
+
+        "Accessories":[
+            "Mechanical Keyboard",
+            "Gaming Mouse",
+            "USB-C Charger",
+            "Power Bank",
+            "External SSD",
+            "Monitor",
+            "Router",
+            "Printer",
+            "Webcam",
+            "Microphone"
+        ]
+    },
+
+    "Fashion":{
+
+        "Mens":[
+            "Formal Shirt",
+            "Casual Shirt",
+            "T-Shirt",
+            "Jeans",
+            "Cargo Pants",
+            "Hoodie",
+            "Blazer",
+            "Suit",
+            "Kurta",
+            "Jacket",
+            "Sweatshirt",
+            "Track Pants"
+        ],
+
+        "Womens":[
+            "Kurti",
+            "Saree",
+            "Dress",
+            "Top",
+            "Jeans",
+            "Leggings",
+            "Palazzo",
+            "Skirt",
+            "Blazer",
+            "Jumpsuit",
+            "Sweater",
+            "Jacket"
+        ],
+
+        "Footwear":[
+            "Running Shoes",
+            "Sneakers",
+            "Formal Shoes",
+            "Boots",
+            "Sandals",
+            "Slippers",
+            "Sports Shoes",
+            "Heels"
+        ],
+
+        "Accessories":[
+            "Backpack",
+            "Wallet",
+            "Leather Belt",
+            "Sunglasses",
+            "Cap",
+            "Watch",
+            "Handbag",
+            "Duffel Bag"
+        ]
+    },
+
+    "Food":{
+
+        "Indian":[
+            "Butter Chicken",
+            "Chicken Biryani",
+            "Veg Biryani",
+            "Paneer Butter Masala",
+            "Dal Makhani",
+            "Rajma Chawal",
+            "Chole Bhature",
+            "Masala Dosa",
+            "Idli",
+            "Vada Pav",
+            "Pav Bhaji",
+            "Poha",
+            "Samosa",
+            "Paratha",
+            "Thali"
+        ],
+
+        "Chinese":[
+            "Hakka Noodles",
+            "Fried Rice",
+            "Manchurian",
+            "Spring Rolls",
+            "Schezwan Rice",
+            "Momos"
+        ],
+
+        "Italian":[
+            "Margherita Pizza",
+            "Farmhouse Pizza",
+            "Pasta Alfredo",
+            "Pasta Arrabiata",
+            "Garlic Bread",
+            "Lasagna"
+        ],
+
+        "Fast Food":[
+            "Burger",
+            "French Fries",
+            "Chicken Wings",
+            "Wrap",
+            "Sandwich",
+            "Hot Dog"
+        ],
+
+        "Desserts":[
+            "Chocolate Cake",
+            "Brownie",
+            "Ice Cream",
+            "Gulab Jamun",
+            "Rasgulla",
+            "Cheesecake"
+        ],
+
+        "Drinks":[
+            "Cold Coffee",
+            "Milkshake",
+            "Mango Shake",
+            "Lassi",
+            "Soft Drink",
+            "Fresh Juice"
+        ]
+    },
+
+    "Grocery":{
+
+        "Fruits":[
+            "Apple",
+            "Banana",
+            "Orange",
+            "Mango",
+            "Grapes",
+            "Pineapple",
+            "Watermelon",
+            "Papaya"
+        ],
+
+        "Vegetables":[
+            "Tomato",
+            "Potato",
+            "Onion",
+            "Carrot",
+            "Capsicum",
+            "Cabbage",
+            "Cauliflower",
+            "Spinach"
+        ],
+
+        "Dairy":[
+            "Milk",
+            "Butter",
+            "Cheese",
+            "Paneer",
+            "Curd",
+            "Ghee"
+        ],
+
+        "Snacks":[
+            "Chips",
+            "Biscuits",
+            "Cookies",
+            "Namkeen",
+            "Chocolate"
+        ],
+
+        "Beverages":[
+            "Tea",
+            "Coffee",
+            "Fruit Juice",
+            "Energy Drink",
+            "Mineral Water"
+        ]
+    },
+    "Banking":{
+
+        "Accounts":[
+            "Savings Account",
+            "Current Account",
+            "Salary Account",
+            "NRI Account",
+            "Joint Account",
+            "Minor Account"
+        ],
+
+        "Banking Services":[
+            "Credit Card",
+            "Debit Card",
+            "Forex Card",
+            "Virtual Card",
+            "RuPay Card",
+            "Visa Card",
+            "MasterCard"
+        ],
+
+        "Loans":[
+            "Home Loan",
+            "Car Loan",
+            "Bike Loan",
+            "Personal Loan",
+            "Education Loan",
+            "Gold Loan",
+            "Business Loan"
+        ],
+
+        "Investments":[
+            "Fixed Deposit",
+            "Recurring Deposit",
+            "Mutual Fund",
+            "Demat Account",
+            "SIP",
+            "PPF",
+            "NPS"
+        ]
+    },
+
+    "Digital Payments":{
+
+        "UPI":[
+            "PhonePe UPI",
+            "Google Pay UPI",
+            "Paytm UPI",
+            "Amazon Pay UPI",
+            "BHIM UPI"
+        ],
+
+        "Wallets":[
+            "Paytm Wallet",
+            "Amazon Pay Wallet",
+            "Mobikwik Wallet",
+            "Freecharge Wallet"
+        ]
+    },
+
+    "Telecom":{
+
+        "Recharge":[
+            "₹199 Recharge",
+            "₹299 Recharge",
+            "₹399 Recharge",
+            "₹599 Recharge",
+            "₹999 Recharge"
+        ],
+
+        "Services":[
+            "5G SIM",
+            "4G SIM",
+            "eSIM",
+            "Postpaid Connection",
+            "Prepaid Connection",
+            "International Roaming"
+        ]
+    },
+
+    "Broadband":{
+
+        "Plans":[
+            "30 Mbps Plan",
+            "50 Mbps Plan",
+            "100 Mbps Plan",
+            "200 Mbps Plan",
+            "500 Mbps Plan",
+            "1 Gbps Plan"
+        ],
+
+        "Services":[
+            "Fiber Installation",
+            "Router Installation",
+            "Static IP",
+            "WiFi Router",
+            "Mesh Router"
+        ]
+    },
+
+    "Travel":{
+
+        "Flights":[
+            "Economy Ticket",
+            "Premium Economy Ticket",
+            "Business Class Ticket",
+            "First Class Ticket"
+        ],
+
+        "Railways":[
+            "Sleeper Ticket",
+            "3AC Ticket",
+            "2AC Ticket",
+            "1AC Ticket",
+            "Tatkal Ticket"
+        ],
+
+        "Hotels":[
+            "Budget Hotel",
+            "Deluxe Room",
+            "Executive Room",
+            "Suite",
+            "Family Room"
+        ],
+
+        "Packages":[
+            "Goa Package",
+            "Kashmir Package",
+            "Kerala Package",
+            "Manali Package",
+            "Dubai Package",
+            "Thailand Package"
+        ]
+    },
+
+    "Healthcare":{
+
+        "Consultation":[
+            "General Physician",
+            "Dermatologist",
+            "Orthopedic",
+            "Cardiologist",
+            "Dentist",
+            "Pediatrician"
+        ],
+
+        "Tests":[
+            "Blood Test",
+            "CBC",
+            "MRI Scan",
+            "CT Scan",
+            "X-Ray",
+            "ECG",
+            "Thyroid Test",
+            "Liver Function Test"
+        ],
+
+        "Medicines":[
+            "Paracetamol",
+            "Azithromycin",
+            "Vitamin D Tablets",
+            "Insulin",
+            "Pain Relief Spray",
+            "Cough Syrup"
+        ]
+    },
+
+    "Insurance":{
+
+        "Health":[
+            "Individual Health Policy",
+            "Family Floater Policy",
+            "Senior Citizen Health Policy"
+        ],
+
+        "Motor":[
+            "Car Insurance",
+            "Bike Insurance",
+            "Commercial Vehicle Insurance"
+        ],
+
+        "Life":[
+            "Term Insurance",
+            "Whole Life Insurance",
+            "ULIP"
+        ],
+
+        "Travel":[
+            "Domestic Travel Insurance",
+            "International Travel Insurance"
+        ]
+    },
+
+    "Education":{
+
+        "Courses":[
+            "Python Programming",
+            "Java Programming",
+            "Web Development",
+            "Data Structures",
+            "Machine Learning",
+            "Cyber Security",
+            "Cloud Computing",
+            "DevOps"
+        ],
+
+        "Exams":[
+            "GATE Test Series",
+            "JEE Test Series",
+            "CAT Mock Test",
+            "UPSC Mock Test"
+        ],
+
+        "Certificates":[
+            "Completion Certificate",
+            "Professional Certificate",
+            "Diploma Certificate"
+        ]
+    },
+
+    "OTT":{
+
+        "Subscriptions":[
+            "Netflix Mobile Plan",
+            "Netflix Premium",
+            "Amazon Prime",
+            "JioHotstar Premium",
+            "Sony LIV Premium",
+            "ZEE5 Premium",
+            "Apple TV+",
+            "YouTube Premium"
+        ]
+    },
+        "Automobile":{
+
+        "Cars":[
+            "Maruti Swift",
+            "Maruti Baleno",
+            "Maruti Brezza",
+            "Hyundai Creta",
+            "Hyundai Venue",
+            "Hyundai Verna",
+            "Tata Nexon",
+            "Tata Punch",
+            "Tata Harrier",
+            "Mahindra XUV700",
+            "Mahindra Scorpio N",
+            "Honda City",
+            "Toyota Innova Hycross",
+            "Toyota Fortuner",
+            "Kia Seltos",
+            "MG Hector",
+            "Skoda Slavia",
+            "Volkswagen Virtus"
+        ],
+
+        "Bikes":[
+            "Royal Enfield Classic 350",
+            "Royal Enfield Hunter 350",
+            "Hero Splendor Plus",
+            "Hero Xtreme 125R",
+            "Honda Shine",
+            "Honda SP125",
+            "Bajaj Pulsar NS200",
+            "Bajaj Dominar 400",
+            "TVS Apache RTR 200",
+            "Yamaha MT-15",
+            "Yamaha R15 V4",
+            "KTM Duke 390"
+        ],
+
+        "Scooters":[
+            "Honda Activa",
+            "TVS Jupiter",
+            "Suzuki Access 125",
+            "Ather 450X",
+            "Ola S1 Pro",
+            "TVS iQube"
+        ],
+
+        "Services":[
+            "General Service",
+            "Oil Change",
+            "Wheel Alignment",
+            "Car Wash",
+            "Battery Replacement",
+            "Tyre Replacement"
+        ]
+    },
+
+    "Home Appliances":{
+
+        "Kitchen":[
+            "Refrigerator",
+            "Microwave Oven",
+            "Mixer Grinder",
+            "Induction Cooktop",
+            "Dishwasher",
+            "Electric Kettle",
+            "Air Fryer",
+            "Toaster"
+        ],
+
+        "Cleaning":[
+            "Washing Machine",
+            "Vacuum Cleaner",
+            "Steam Cleaner"
+        ],
+
+        "Cooling":[
+            "Split AC",
+            "Window AC",
+            "Air Cooler",
+            "Ceiling Fan",
+            "Table Fan",
+            "Air Purifier"
+        ]
+    },
+
+    "Retail":{
+
+        "Products":[
+            "Laptop",
+            "Smartphone",
+            "Television",
+            "Shoes",
+            "Furniture",
+            "Groceries",
+            "Kitchen Appliances",
+            "Clothing",
+            "Gaming Console",
+            "Smart Watch"
+        ]
+    },
+
+    "Courier":{
+
+        "Services":[
+            "Domestic Parcel",
+            "International Parcel",
+            "Express Delivery",
+            "Same Day Delivery",
+            "Cash On Delivery",
+            "Document Delivery"
+        ]
+    },
+
+    "Government":{
+
+        "Services":[
+            "Passport Application",
+            "PAN Card",
+            "Aadhaar Update",
+            "Driving Licence",
+            "Voter ID",
+            "Birth Certificate",
+            "Income Certificate",
+            "Caste Certificate",
+            "GST Registration",
+            "Property Registration"
+        ]
+    },
+
+    "Municipal":{
+
+        "Services":[
+            "Garbage Collection",
+            "Street Light",
+            "Road Repair",
+            "Water Supply",
+            "Drainage",
+            "Tree Trimming",
+            "Public Toilet",
+            "Illegal Parking",
+            "Open Manhole",
+            "Pothole Complaint"
+        ]
+    },
+
+    "Restaurants":{
+
+        "Chains":[
+            "McDonald's",
+            "Burger King",
+            "KFC",
+            "Subway",
+            "Domino's Pizza",
+            "Pizza Hut",
+            "Barbeque Nation",
+            "Bikanervala",
+            "Haldiram's",
+            "Wow! Momo"
+        ]
+    },
+
+    "Hotels":{
+
+        "Room Types":[
+            "Standard Room",
+            "Deluxe Room",
+            "Executive Room",
+            "Premium Room",
+            "Suite",
+            "Family Room",
+            "King Room",
+            "Twin Room"
+        ],
+
+        "Facilities":[
+            "Breakfast",
+            "Airport Pickup",
+            "Swimming Pool",
+            "Gym",
+            "Spa",
+            "Conference Hall"
+        ]
+    },
+
+    "Airlines":{
+
+        "Domestic":[
+            "IndiGo",
+            "Air India",
+            "Akasa Air",
+            "SpiceJet",
+            "Alliance Air"
+        ],
+
+        "International":[
+            "Emirates",
+            "Qatar Airways",
+            "Singapore Airlines",
+            "Etihad Airways",
+            "Lufthansa"
+        ]
+    },
+    "Furniture":{
+
+    "Living Room":[
+        "Sofa",
+        "Coffee Table",
+        "TV Unit",
+        "Recliner"
+    ],
+
+    "Bedroom":[
+        "Bed",
+        "Mattress",
+        "Wardrobe",
+        "Side Table"
+    ],
+
+    "Office":[
+        "Office Chair",
+        "Study Table",
+        "Bookshelf"
+    ]
+},
+"Real Estate":{
+
+    "Residential":[
+        "Apartment",
+        "Villa",
+        "Independent House",
+        "Plot"
+    ],
+
+    "Commercial":[
+        "Office Space",
+        "Shop",
+        "Warehouse"
+    ],
+
+    "Services":[
+        "Property Registration",
+        "Rental Agreement",
+        "Property Verification"
+    ]
+},
+"Pharmacy":{
+
+    "Medicines":[
+        "Prescription Medicine",
+        "OTC Medicine",
+        "Supplements",
+        "Medical Devices"
+    ],
+
+    "Services":[
+        "Medicine Delivery",
+        "Lab Test Booking",
+        "Doctor Consultation"
+    ]
+},
+"Fuel":{
+
+    "Petrol":[
+        "Regular Petrol",
+        "Premium Petrol"
+    ],
+
+    "Diesel":[
+        "Regular Diesel"
+    ],
+
+    "EV Charging":[
+        "Fast Charging",
+        "Normal Charging"
+    ]
+},
+"Jewellery":{
+
+    "Gold":[
+        "Gold Ring",
+        "Gold Chain",
+        "Gold Necklace"
+    ],
+
+    "Silver":[
+        "Silver Ring",
+        "Silver Bracelet"
+    ],
+
+    "Diamond":[
+        "Diamond Ring",
+        "Diamond Earrings"
+    ]
+},
+"Internet Services":{
+
+    "Email":[
+        "Gmail",
+        "Outlook",
+        "Yahoo Mail"
+    ],
+
+    "Cloud Storage":[
+        "Google Drive",
+        "OneDrive",
+        "Dropbox"
+    ],
+
+    "Domains":[
+        "Domain Registration",
+        "Web Hosting",
+        "SSL Certificate"
+    ]
+},
+"Event Booking":{
+
+    "Movies":[
+        "Movie Ticket"
+    ],
+
+    "Concerts":[
+        "Concert Ticket",
+        "Music Festival"
+    ],
+
+    "Sports":[
+        "Cricket Match",
+        "Football Match"
+    ]
+},
+}

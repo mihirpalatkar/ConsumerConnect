@@ -1,0 +1,161 @@
+{
+  "E-Commerce": [
+    "iPhone 16",
+    "Samsung Galaxy S25",
+    "OnePlus 13",
+    "Google Pixel 10",
+    "Xiaomi 16",
+    "Dell Inspiron Laptop",
+    "HP Pavilion Laptop",
+    "Lenovo ThinkPad",
+    "MacBook Air",
+    "Sony WH-1000XM6 Headphones",
+    "Apple AirPods Pro",
+    "Smart Watch",
+    "Bluetooth Speaker",
+    "Gaming Mouse",
+    "Mechanical Keyboard",
+    "Nike Running Shoes",
+    "Adidas Sneakers",
+    "Puma T-Shirt",
+    "Levi's Jeans",
+    "Backpack",
+    "Office Chair",
+    "Study Table",
+    "Mixer Grinder",
+    "Microwave Oven",
+    "Water Bottle",
+    "Coffee Maker",
+    "LED TV",
+    "Power Bank",
+    "USB-C Charger",
+    "External SSD"
+  ],
+
+  "Food Delivery": [
+    "Veg Biryani",
+    "Chicken Biryani",
+    "Margherita Pizza",
+    "Pepperoni Pizza",
+    "Burger Meal",
+    "Paneer Butter Masala",
+    "Butter Chicken",
+    "Fried Rice",
+    "Hakka Noodles",
+    "Masala Dosa",
+    "Idli",
+    "Chole Bhature",
+    "Veg Thali",
+    "Chicken Thali",
+    "Ice Cream",
+    "Cold Coffee",
+    "Milkshake",
+    "Soft Drink",
+    "Wrap",
+    "Sandwich"
+  ],
+
+  "Electronics": [
+    "Smartphone",
+    "Laptop",
+    "Desktop Computer",
+    "Tablet",
+    "Smart TV",
+    "Monitor",
+    "Printer",
+    "Router",
+    "Gaming Console",
+    "Smart Watch",
+    "Wireless Earbuds",
+    "Bluetooth Speaker",
+    "DSLR Camera",
+    "Security Camera",
+    "Projector"
+  ],
+
+  "Home Appliances": [
+    "Refrigerator",
+    "Washing Machine",
+    "Air Conditioner",
+    "Microwave",
+    "Dishwasher",
+    "Water Purifier",
+    "Vacuum Cleaner",
+    "Air Purifier",
+    "Ceiling Fan",
+    "Geyser",
+    "Induction Cooktop",
+    "Mixer Grinder"
+  ],
+
+  "Travel": [
+    "Flight Ticket",
+    "Train Ticket",
+    "Bus Ticket",
+    "Hotel Booking",
+    "Holiday Package",
+    "Cab Booking",
+    "Travel Insurance"
+  ],
+
+  "Telecom": [
+    "Prepaid Recharge",
+    "Postpaid Plan",
+    "Fiber Connection",
+    "5G Plan",
+    "SIM Card",
+    "Broadband Installation"
+  ],
+
+  "Banking": [
+    "Savings Account",
+    "Current Account",
+    "Credit Card",
+    "Debit Card",
+    "Home Loan",
+    "Personal Loan",
+    "Fixed Deposit",
+    "UPI Transfer",
+    "NEFT Transfer",
+    "RTGS Transfer"
+  ],
+
+  "Insurance": [
+    "Health Insurance",
+    "Car Insurance",
+    "Bike Insurance",
+    "Life Insurance",
+    "Travel Insurance",
+    "Term Insurance"
+  ],
+
+  "Automobile": [
+    "Car",
+    "Motorcycle",
+    "Scooter",
+    "Electric Car",
+    "Electric Scooter",
+    "Car Service",
+    "Bike Service",
+    "Vehicle Insurance"
+  ],
+
+  "Healthcare": [
+    "Doctor Appointment",
+    "Blood Test",
+    "MRI Scan",
+    "CT Scan",
+    "Medicine Order",
+    "Health Checkup",
+    "Surgery Package"
+  ],
+
+  "Education": [
+    "Online Course",
+    "Test Series",
+    "Mock Exam",
+    "Certification",
+    "Video Lecture",
+    "Study Material"
+  ]
+}
