@@ -3,12 +3,7 @@ from app.models.issue_history import IssueHistory
 
 
 def create_history(
-    issue_id,
-    action,
-    performed_by,
-    message,
-    old_value=None,
-    new_value=None
+    issue_id, action, performed_by, message, old_value=None, new_value=None
 ):
 
     history = IssueHistory(
@@ -17,7 +12,7 @@ def create_history(
         performed_by=performed_by,
         old_value=old_value,
         new_value=new_value,
-        message=message
+        message=message,
     )
 
     db.session.add(history)
@@ -28,8 +23,8 @@ def create_history(
 
 def get_issue_history(issue_id):
 
-    return IssueHistory.query.filter_by(
-        issue_id=issue_id
-    ).order_by(
-        IssueHistory.created_at.asc()
-    ).all()
+    return (
+        IssueHistory.query.filter_by(issue_id=issue_id)
+        .order_by(IssueHistory.created_at.asc())
+        .all()
+    )

@@ -9,30 +9,24 @@ def get_all_companies():
     data = []
 
     for company in companies:
-        data.append({
-            "id": company.id,
-            "name": company.name,
-            "email": company.email,
-            "is_blocked": company.is_blocked,
-            "created_at": company.created_at
-        })
+        data.append(
+            {
+                "id": company.id,
+                "name": company.name,
+                "email": company.email,
+                "is_blocked": company.is_blocked,
+                "created_at": company.created_at,
+            }
+        )
 
-    return {
-        "success": True,
-        "count": len(data),
-        "companies": data
-    }
+    return {"success": True, "count": len(data), "companies": data}
 
 
 def get_company_by_id(company_id):
     company = db.session.get(Company, company_id)
 
     if not company:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Company not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Company not found"}
 
     return {
         "success": True,
@@ -41,8 +35,8 @@ def get_company_by_id(company_id):
             "name": company.name,
             "email": company.email,
             "is_blocked": company.is_blocked,
-            "created_at": company.created_at
-        }
+            "created_at": company.created_at,
+        },
     }
 
 
@@ -50,17 +44,13 @@ def block_company(company_id):
     company = db.session.get(Company, company_id)
 
     if not company:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Company not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Company not found"}
 
     if company.is_blocked:
         return {
             "success": False,
             "status_code": 400,
-            "message": "Company is already blocked"
+            "message": "Company is already blocked",
         }
 
     company.is_blocked = True
@@ -69,32 +59,25 @@ def block_company(company_id):
         action="Blocked Company",
         target_type="Company",
         target_id=company.id,
-        details=f"Blocked company '{company.name}' ({company.email})"
+        details=f"Blocked company '{company.name}' ({company.email})",
     )
 
     db.session.commit()
 
-    return {
-        "success": True,
-        "message": "Company blocked successfully"
-    }
+    return {"success": True, "message": "Company blocked successfully"}
 
 
 def unblock_company(company_id):
     company = db.session.get(Company, company_id)
 
     if not company:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Company not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Company not found"}
 
     if not company.is_blocked:
         return {
             "success": False,
             "status_code": 400,
-            "message": "Company is already active"
+            "message": "Company is already active",
         }
 
     company.is_blocked = False
@@ -103,12 +86,9 @@ def unblock_company(company_id):
         action="Unblocked Company",
         target_type="Company",
         target_id=company.id,
-        details=f"Unblocked company '{company.name}' ({company.email})"
+        details=f"Unblocked company '{company.name}' ({company.email})",
     )
 
     db.session.commit()
 
-    return {
-        "success": True,
-        "message": "Company unblocked successfully"
-    }
+    return {"success": True, "message": "Company unblocked successfully"}

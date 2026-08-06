@@ -13,7 +13,7 @@ class AdminLogService:
             action=action,
             target_type=target_type,
             target_id=target_id,
-            details=details
+            details=details,
         )
 
         db.session.add(log)

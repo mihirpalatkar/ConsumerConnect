@@ -9,26 +9,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 MODEL_DIR = BASE_DIR / "models"
 
-spam_model = joblib.load(
-    MODEL_DIR / "spam_detector.pkl"
-)
+spam_model = joblib.load(MODEL_DIR / "spam_detector.pkl")
 
-severity_model = joblib.load(
-    MODEL_DIR / "severity_classifier.pkl"
-)
+severity_model = joblib.load(MODEL_DIR / "severity_classifier.pkl")
 
-sector_model = joblib.load(
-    MODEL_DIR / "sector_classifier.pkl"
-)
+sector_model = joblib.load(MODEL_DIR / "sector_classifier.pkl")
 
-resolution_model = joblib.load(
-    MODEL_DIR / "resolution_predictor.pkl"
-)
+resolution_model = joblib.load(MODEL_DIR / "resolution_predictor.pkl")
 
 
 # --------------------------------------------------
 # Prediction Function
 # --------------------------------------------------
+
 
 def predict_complaint(
     complaint: str,
@@ -57,9 +50,7 @@ def predict_complaint(
 
     resolution_df = pd.DataFrame([resolution_input])
 
-    resolution_days = round(
-        resolution_model.predict(resolution_df)[0]
-    )
+    resolution_days = round(resolution_model.predict(resolution_df)[0])
 
     return {
         "spam": spam,

@@ -1,15 +1,10 @@
-from unittest import result
 
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.services.auth_service import register_user, login_user
 
-auth_bp = Blueprint(
-    "auth",
-    __name__,
-    url_prefix="/api/auth"
-)
+auth_bp = Blueprint("auth", __name__, url_prefix="/api/auth")
 
 
 @auth_bp.route("/register", methods=["POST"])
@@ -21,11 +16,7 @@ def register():
     email = data.get("email")
     password = data.get("password")
 
-    result = register_user(
-        name,
-        email,
-        password
-    )
+    result = register_user(name, email, password)
 
     if result["success"]:
         return jsonify(result), 201
@@ -45,14 +36,20 @@ def login():
 
     return jsonify(result), result.get("status_code", 200)
 
+
 @auth_bp.route("/profile", methods=["GET"])
 @jwt_required()
 def profile():
 
     current_user = get_jwt_identity()
 
-    return jsonify({
-        "success": True,
-        "message": "Protected route accessed successfully",
-        "user_id": current_user
-    }), 200
+    return (
+        jsonify(
+            {
+                "success": True,
+                "message": "Protected route accessed successfully",
+                "user_id": current_user,
+            }
+        ),
+        200,
+    )

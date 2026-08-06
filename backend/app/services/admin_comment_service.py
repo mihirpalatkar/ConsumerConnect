@@ -7,9 +7,7 @@ class AdminCommentService:
 
     @staticmethod
     def get_all_comments():
-        return Comment.query.order_by(
-            Comment.created_at.desc()
-        ).all()
+        return Comment.query.order_by(Comment.created_at.desc()).all()
 
     @staticmethod
     def get_comment(comment_id):
@@ -23,7 +21,7 @@ class AdminCommentService:
             action="Deleted Comment",
             target_type="Comment",
             target_id=comment.id,
-            details=f"Deleted comment #{comment.id}"
+            details=f"Deleted comment #{comment.id}",
         )
 
         db.session.commit()
@@ -36,7 +34,7 @@ class AdminCommentService:
             action="Restored Comment",
             target_type="Comment",
             target_id=comment.id,
-            details=f"Restored comment #{comment.id}"
+            details=f"Restored comment #{comment.id}",
         )
 
         db.session.commit()

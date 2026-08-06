@@ -1,5 +1,4 @@
 COMPANIES = {
-
     "E-Commerce": [
         "Amazon",
         "Flipkart",
@@ -15,9 +14,8 @@ COMPANIES = {
         "Vijay Sales",
         "ShopClues",
         "Pepperfry",
-        "Urban Ladder"
+        "Urban Ladder",
     ],
-
     "Food Delivery": [
         "Swiggy",
         "Zomato",
@@ -30,9 +28,8 @@ COMPANIES = {
         "Subway",
         "Wow! Momo",
         "Faasos",
-        "Behrouz Biryani"
+        "Behrouz Biryani",
     ],
-
     "Electronics": [
         "Apple",
         "Samsung",
@@ -53,9 +50,8 @@ COMPANIES = {
         "Oppo",
         "Realme",
         "Boat",
-        "JBL"
+        "JBL",
     ],
-
     "Home Appliances": [
         "LG",
         "Samsung",
@@ -71,9 +67,8 @@ COMPANIES = {
         "Havells",
         "Kent",
         "Blue Star",
-        "Voltas"
+        "Voltas",
     ],
-
     "Travel": [
         "MakeMyTrip",
         "Goibibo",
@@ -86,9 +81,8 @@ COMPANIES = {
         "OYO",
         "Uber",
         "Ola",
-        "RedBus"
+        "RedBus",
     ],
-
     "Telecom": [
         "Jio",
         "Airtel",
@@ -99,9 +93,8 @@ COMPANIES = {
         "Excitel",
         "Hathway",
         "Spectra",
-        "Tikona"
+        "Tikona",
     ],
-
     "Banking": [
         "State Bank of India",
         "HDFC Bank",
@@ -117,9 +110,8 @@ COMPANIES = {
         "Yes Bank",
         "IndusInd Bank",
         "AU Small Finance Bank",
-        "Federal Bank"
+        "Federal Bank",
     ],
-
     "Insurance": [
         "LIC",
         "HDFC Life",
@@ -132,9 +124,8 @@ COMPANIES = {
         "Care Health",
         "Tata AIG",
         "ACKO",
-        "Reliance General Insurance"
+        "Reliance General Insurance",
     ],
-
     "Automobile": [
         "Maruti Suzuki",
         "Hyundai",
@@ -155,9 +146,8 @@ COMPANIES = {
         "Suzuki",
         "Yamaha",
         "Ather Energy",
-        "Ola Electric"
+        "Ola Electric",
     ],
-
     "Healthcare": [
         "Apollo Hospitals",
         "Fortis Healthcare",
@@ -173,9 +163,8 @@ COMPANIES = {
         "Dr. Lal PathLabs",
         "Metropolis Healthcare",
         "Apollo Pharmacy",
-        "MedPlus"
+        "MedPlus",
     ],
-
     "Education": [
         "BYJU'S",
         "Unacademy",
@@ -191,6 +180,6 @@ COMPANIES = {
         "NPTEL",
         "GeeksforGeeks",
         "Coding Ninjas",
-        "CodeChef"
-    ]
+        "CodeChef",
+    ],
 }

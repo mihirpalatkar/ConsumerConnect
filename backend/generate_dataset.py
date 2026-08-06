@@ -30,33 +30,13 @@ fake = Faker("en_IN")
 
 TOTAL_RECORDS = 5000
 
-SEVERITY = [
-    "Low",
-    "Medium",
-    "High",
-    "Critical"
-]
+SEVERITY = ["Low", "Medium", "High", "Critical"]
 
-STATUS = [
-    "Open",
-    "In Progress",
-    "Resolved",
-    "Closed"
-]
+STATUS = ["Open", "In Progress", "Resolved", "Closed"]
 
-SENTIMENT = [
-    "Negative",
-    "Neutral",
-    "Positive"
-]
+SENTIMENT = ["Negative", "Neutral", "Positive"]
 
-CHANNELS = [
-    "Website",
-    "Mobile App",
-    "Email",
-    "Customer Care",
-    "Social Media"
-]
+CHANNELS = ["Website", "Mobile App", "Email", "Customer Care", "Social Media"]
 
 # --------------------------------------------------
 # Complaint Templates
@@ -70,7 +50,7 @@ BANKING_COMPLAINTS = [
     "Loan application is still pending.",
     "Net banking is not working.",
     "Account was frozen unexpectedly.",
-    "Unauthorized transaction detected."
+    "Unauthorized transaction detected.",
 ]
 
 ECOMMERCE_COMPLAINTS = [
@@ -81,7 +61,7 @@ ECOMMERCE_COMPLAINTS = [
     "Package marked delivered but never arrived.",
     "Received used {product}.",
     "Missing accessories in {product}.",
-    "Product stopped working after two days."
+    "Product stopped working after two days.",
 ]
 
 FOOD_COMPLAINTS = [
@@ -92,7 +72,7 @@ FOOD_COMPLAINTS = [
     "Food quality was poor.",
     "Order cancelled automatically.",
     "Packaging was damaged.",
-    "Food was stale."
+    "Food was stale.",
 ]
 
 TELECOM_COMPLAINTS = [
@@ -103,7 +83,7 @@ TELECOM_COMPLAINTS = [
     "Frequent call drops.",
     "Recharge not reflected.",
     "5G service unavailable.",
-    "Broadband disconnects repeatedly."
+    "Broadband disconnects repeatedly.",
 ]
 
 HEALTHCARE_COMPLAINTS = [
@@ -114,7 +94,7 @@ HEALTHCARE_COMPLAINTS = [
     "Insurance claim rejected.",
     "Hospital billing incorrect.",
     "Long waiting time.",
-    "Appointment booked but doctor unavailable."
+    "Appointment booked but doctor unavailable.",
 ]
 
 DEFAULT_COMPLAINTS = [
@@ -123,12 +103,13 @@ DEFAULT_COMPLAINTS = [
     "Refund is pending.",
     "Issue has not been resolved.",
     "Very disappointed with the service.",
-    "Customer support never responded."
+    "Customer support never responded.",
 ]
 
 # --------------------------------------------------
 # Helper Functions
 # --------------------------------------------------
+
 
 def load_json(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
@@ -152,18 +133,9 @@ def random_date():
     return (start + timedelta(days=random_days)).strftime("%Y-%m-%d")
 
 
-
 def random_status():
 
-    return random.choices(
-
-        STATUS,
-
-        weights=[30, 30, 25, 15],
-
-        k=1
-
-    )[0]
+    return random.choices(STATUS, weights=[30, 30, 25, 15], k=1)[0]
 
 
 def generate_spam():
@@ -172,28 +144,23 @@ def generate_spam():
 
         return (
             "Yes",
-            random.choice([
-                "Win ₹10,000 instantly!",
-                "Click here to claim your prize.",
-                "Earn money from home.",
-                "Visit our website now.",
-                "Free gift available today."
-            ])
+            random.choice(
+                [
+                    "Win ₹10,000 instantly!",
+                    "Click here to claim your prize.",
+                    "Earn money from home.",
+                    "Visit our website now.",
+                    "Free gift available today.",
+                ]
+            ),
         )
 
     return ("No", None)
 
+
 def random_duplicate():
 
-    return random.choices(
-
-        ["No", "Yes"],
-
-        weights=[92, 8],
-
-        k=1
-
-    )[0]
+    return random.choices(["No", "Yes"], weights=[92, 8], k=1)[0]
 
 
 def generate_complaint(sector, product):
@@ -203,7 +170,7 @@ def generate_complaint(sector, product):
         "E-Commerce": ECOMMERCE_COMPLAINTS,
         "Food Delivery": FOOD_COMPLAINTS,
         "Telecom": TELECOM_COMPLAINTS,
-        "Healthcare": HEALTHCARE_COMPLAINTS
+        "Healthcare": HEALTHCARE_COMPLAINTS,
     }
 
     templates = complaint_map.get(sector, DEFAULT_COMPLAINTS)
@@ -212,6 +179,7 @@ def generate_complaint(sector, product):
 
     return complaint.format(product=product)
 
+
 def generate_severity(sector):
 
     weights = {
@@ -219,34 +187,30 @@ def generate_severity(sector):
         "Telecom": [10, 40, 35, 15],
         "Food Delivery": [45, 40, 12, 3],
         "Healthcare": [5, 25, 40, 30],
-        "E-Commerce": [15, 45, 30, 10]
+        "E-Commerce": [15, 45, 30, 10],
     }
 
     default = [25, 40, 25, 10]
 
-    return random.choices(
-        SEVERITY,
-        weights=weights.get(sector, default),
-        k=1
-    )[0]
+    return random.choices(SEVERITY, weights=weights.get(sector, default), k=1)[0]
+
+
 def generate_sentiment(severity):
 
     mapping = {
         "Low": [20, 50, 30],
         "Medium": [60, 30, 10],
         "High": [85, 13, 2],
-        "Critical": [97, 3, 0]
+        "Critical": [97, 3, 0],
     }
 
-    return random.choices(
-        SENTIMENT,
-        weights=mapping[severity],
-        k=1
-    )[0]
+    return random.choices(SENTIMENT, weights=mapping[severity], k=1)[0]
+
 
 # --------------------------------------------------
 # Generate One Complaint Record
 # --------------------------------------------------
+
 
 def generate_record(record_number):
 
@@ -260,9 +224,7 @@ def generate_record(record_number):
 
     age = random.randint(18, 70)
 
-    gender = fake.random_element(
-        ["Male", "Female", "Other"]
-    )
+    gender = fake.random_element(["Male", "Female", "Other"])
 
     city = random.choice(cities)
 
@@ -285,7 +247,7 @@ def generate_record(record_number):
     elif severity == "High":
         support_count = random.randint(50, 250)
 
-    else:   # Critical
+    else:  # Critical
         support_count = random.randint(150, 1000)
 
     if severity == "Low":
@@ -297,7 +259,7 @@ def generate_record(record_number):
     elif severity == "High":
         images = random.randint(1, 4)
 
-    else:   # Critical
+    else:  # Critical
         images = random.randint(2, 6)
 
     channel = random.choice(CHANNELS)
@@ -331,14 +293,7 @@ def generate_record(record_number):
 
     # Priority Score
 
-    priority_score = {
-
-        "Low": 1,
-        "Medium": 2,
-        "High": 3,
-        "Critical": 4
-
-    }[severity]
+    priority_score = {"Low": 1, "Medium": 2, "High": 3, "Critical": 4}[severity]
 
     # Rating
     if status in ["Resolved", "Closed"]:
@@ -361,89 +316,54 @@ def generate_record(record_number):
 
     if spam == "Yes":
 
-        ai_confidence = round(
-            random.uniform(0.95, 1.00),
-            2
-        )
+        ai_confidence = round(random.uniform(0.95, 1.00), 2)
 
     elif severity == "Critical":
 
-        ai_confidence = round(
-            random.uniform(0.90, 0.99),
-            2
-        )
+        ai_confidence = round(random.uniform(0.90, 0.99), 2)
 
     elif severity == "High":
 
-        ai_confidence = round(
-            random.uniform(0.85, 0.95),
-            2
-        )
+        ai_confidence = round(random.uniform(0.85, 0.95), 2)
 
     elif severity == "Medium":
 
-        ai_confidence = round(
-            random.uniform(0.75, 0.90),
-            2
-        )
+        ai_confidence = round(random.uniform(0.75, 0.90), 2)
 
     else:
 
-        ai_confidence = round(
-            random.uniform(0.70, 0.85),
-            2
-        )
+        ai_confidence = round(random.uniform(0.70, 0.85), 2)
 
     return {
-
         "complaint_id": f"CMP{record_number:06d}",
-
         "customer_name": customer_name,
-
         "age": age,
-
         "gender": gender,
-
         "city": city,
-
         "sector": sector,
-
         "company": company,
-
         "product_service": product,
-
         "complaint": complaint,
-
         "severity": severity,
-
         "priority_score": priority_score,
-
         "status": status,
-
         "sentiment": sentiment,
-
         "spam": spam,
-
         "duplicate": duplicate,
-
         "support_count": support_count,
-
         "images_attached": images,
-
         "channel": channel,
-
         "customer_rating": customer_rating,
-
         "resolution_days": resolution_days,
-
         "ai_confidence": ai_confidence,
-
-        "complaint_date": complaint_date
-
+        "complaint_date": complaint_date,
     }
+
+
 # --------------------------------------------------
 # Generate Complete Dataset
 # --------------------------------------------------
+
 
 def generate_dataset(total_records=TOTAL_RECORDS):
 
@@ -467,15 +387,12 @@ def generate_dataset(total_records=TOTAL_RECORDS):
 # Save Dataset
 # --------------------------------------------------
 
+
 def save_dataset(df):
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    df.to_csv(
-        OUTPUT_FILE,
-        index=False,
-        encoding="utf-8"
-    )
+    df.to_csv(OUTPUT_FILE, index=False, encoding="utf-8")
 
     print("\nDataset Saved Successfully!")
     print(f"Location : {OUTPUT_FILE}")
@@ -486,6 +403,7 @@ def save_dataset(df):
 # --------------------------------------------------
 # Dataset Statistics
 # --------------------------------------------------
+
 
 def print_statistics(df):
 
@@ -515,22 +433,17 @@ def print_statistics(df):
 
     print("\nTop 10 Companies")
 
-    print(
-        df["company"]
-        .value_counts()
-        .head(10)
-    )
+    print(df["company"].value_counts().head(10))
 
     print("\nSample Records")
 
-    print(
-        df.head(5)
-    )
+    print(df.head(5))
 
 
 # --------------------------------------------------
 # Main
 # --------------------------------------------------
+
 
 def main():
 
@@ -544,4 +457,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-

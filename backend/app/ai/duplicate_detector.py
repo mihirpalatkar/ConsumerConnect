@@ -15,26 +15,17 @@ def find_duplicate(title, description, threshold=0.80):
     if not issues:
         return None
 
-    texts = [
-        f"{issue.title}. {issue.description}"
-        for issue in issues
-    ]
+    texts = [f"{issue.title}. {issue.description}" for issue in issues]
 
     embeddings = model.encode(texts)
     new_embedding = model.encode([new_text])
 
-    similarities = cosine_similarity(
-        new_embedding,
-        embeddings
-    )[0]
+    similarities = cosine_similarity(new_embedding, embeddings)[0]
 
     best_index = similarities.argmax()
     best_score = similarities[best_index]
 
     if best_score >= threshold:
-        return {
-            "issue": issues[best_index],
-            "score": float(best_score)
-        }
+        return {"issue": issues[best_index], "score": float(best_score)}
 
     return None

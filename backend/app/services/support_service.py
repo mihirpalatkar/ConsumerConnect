@@ -9,16 +9,9 @@ def toggle_support(issue_id, user_id):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
-    support = Support.query.filter_by(
-        issue_id=issue_id,
-        user_id=user_id
-    ).first()
+    support = Support.query.filter_by(issue_id=issue_id, user_id=user_id).first()
 
     # Remove support
     if support:
@@ -30,17 +23,10 @@ def toggle_support(issue_id, user_id):
 
         db.session.commit()
 
-        return {
-            "success": True,
-            "status_code": 200,
-            "message": "Support removed"
-        }
+        return {"success": True, "status_code": 200, "message": "Support removed"}
 
     # Add support
-    support = Support(
-        issue_id=issue_id,
-        user_id=user_id
-    )
+    support = Support(issue_id=issue_id, user_id=user_id)
 
     db.session.add(support)
     db.session.flush()
@@ -55,14 +41,10 @@ def toggle_support(issue_id, user_id):
             user_id=issue.user_id,
             issue_id=issue.id,
             notification_type="SUPPORT",
-            message=f"Someone supported your issue '{issue.title}'."
+            message=f"Someone supported your issue '{issue.title}'.",
         )
 
-    return {
-        "success": True,
-        "status_code": 201,
-        "message": "Issue supported"
-    }
+    return {"success": True, "status_code": 201, "message": "Issue supported"}
 
 
 def get_support_count(issue_id):

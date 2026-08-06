@@ -4,11 +4,7 @@ from app.services.admin_log_service import AdminLogService
 
 
 def get_all_issues():
-    issues = (
-        Issue.query
-        .order_by(Issue.created_at.desc())
-        .all()
-    )
+    issues = Issue.query.order_by(Issue.created_at.desc()).all()
 
     return {
         "success": True,
@@ -22,10 +18,10 @@ def get_all_issues():
                 "severity": issue.severity,
                 "status": issue.status,
                 "created_at": issue.created_at,
-                "is_deleted": issue.is_deleted
+                "is_deleted": issue.is_deleted,
             }
             for issue in issues
-        ]
+        ],
     }
 
 
@@ -34,11 +30,7 @@ def get_issue_by_id(issue_id):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     return {
         "success": True,
@@ -53,8 +45,8 @@ def get_issue_by_id(issue_id):
             "image_url": issue.image_url,
             "created_at": issue.created_at,
             "resolved_at": issue.resolved_at,
-            "is_deleted": issue.is_deleted
-        }
+            "is_deleted": issue.is_deleted,
+        },
     }
 
 
@@ -63,25 +55,12 @@ def update_issue_status(issue_id, status):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
-    valid_statuses = [
-        "Open",
-        "In Progress",
-        "Resolved",
-        "Closed"
-    ]
+    valid_statuses = ["Open", "In Progress", "Resolved", "Closed"]
 
     if status not in valid_statuses:
-        return {
-            "success": False,
-            "status_code": 400,
-            "message": "Invalid status"
-        }
+        return {"success": False, "status_code": 400, "message": "Invalid status"}
 
     issue.status = status
 
@@ -89,15 +68,12 @@ def update_issue_status(issue_id, status):
         action="Updated Issue Status",
         target_type="Issue",
         target_id=issue.id,
-        details=f"Changed status to '{status}' for issue '{issue.title}'"
+        details=f"Changed status to '{status}' for issue '{issue.title}'",
     )
 
     db.session.commit()
 
-    return {
-        "success": True,
-        "message": "Issue status updated successfully"
-    }
+    return {"success": True, "message": "Issue status updated successfully"}
 
 
 def restore_issue(issue_id):
@@ -105,17 +81,13 @@ def restore_issue(issue_id):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     if not issue.is_deleted:
         return {
             "success": False,
             "status_code": 400,
-            "message": "Issue is already active"
+            "message": "Issue is already active",
         }
 
     issue.is_deleted = False
@@ -124,15 +96,12 @@ def restore_issue(issue_id):
         action="Restored Issue",
         target_type="Issue",
         target_id=issue.id,
-        details=f"Restored issue '{issue.title}'"
+        details=f"Restored issue '{issue.title}'",
     )
 
     db.session.commit()
 
-    return {
-        "success": True,
-        "message": "Issue restored successfully"
-    }
+    return {"success": True, "message": "Issue restored successfully"}
 
 
 def delete_issue(issue_id):
@@ -140,17 +109,13 @@ def delete_issue(issue_id):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     if issue.is_deleted:
         return {
             "success": False,
             "status_code": 400,
-            "message": "Issue already deleted"
+            "message": "Issue already deleted",
         }
 
     issue.is_deleted = True
@@ -159,12 +124,9 @@ def delete_issue(issue_id):
         action="Deleted Issue",
         target_type="Issue",
         target_id=issue.id,
-        details=f"Deleted issue '{issue.title}'"
+        details=f"Deleted issue '{issue.title}'",
     )
 
     db.session.commit()
 
-    return {
-        "success": True,
-        "message": "Issue deleted successfully"
-    }
+    return {"success": True, "message": "Issue deleted successfully"}

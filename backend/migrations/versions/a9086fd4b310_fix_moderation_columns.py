@@ -8,7 +8,6 @@ Create Date: 2026-07-29 14:03:34.338925
 from alembic import op
 import sqlalchemy as sa
 
-
 # revision identifiers, used by Alembic.
 revision = "a9086fd4b310"
 down_revision = "5f6dfebeaf5b"
@@ -24,7 +23,7 @@ def upgrade():
                 "is_deleted",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_blocked")
@@ -36,7 +35,7 @@ def upgrade():
                 "is_deleted",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_blocked")
@@ -48,7 +47,7 @@ def upgrade():
                 "is_deleted",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_blocked")
@@ -62,7 +61,7 @@ def downgrade():
                 "is_blocked",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_deleted")
@@ -74,7 +73,7 @@ def downgrade():
                 "is_blocked",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_deleted")
@@ -86,7 +85,7 @@ def downgrade():
                 "is_blocked",
                 sa.Boolean(),
                 nullable=False,
-                server_default=sa.text("false")
+                server_default=sa.text("false"),
             )
         )
         batch_op.drop_column("is_deleted")

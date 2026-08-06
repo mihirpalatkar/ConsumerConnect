@@ -7,28 +7,12 @@ class CompanyResponse(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
-    issue_id = db.Column(
-        db.Integer,
-        db.ForeignKey("issues.id"),
-        nullable=False
-    )
+    issue_id = db.Column(db.Integer, db.ForeignKey("issues.id"), nullable=False)
 
-    company_name = db.Column(
-        db.String(150),
-        nullable=False
-    )
+    company_name = db.Column(db.String(150), nullable=False)
 
-    response = db.Column(
-        db.Text,
-        nullable=False
-    )
+    response = db.Column(db.Text, nullable=False)
 
-    created_at = db.Column(
-        db.DateTime,
-        default=datetime.utcnow
-    )
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    issue = db.relationship(
-        "Issue",
-        backref="company_responses"
-    )
+    issue = db.relationship("Issue", backref="company_responses")

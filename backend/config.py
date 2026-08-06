@@ -26,8 +26,4 @@ class Config:
     MAX_CONTENT_LENGTH = 5 * 1024 * 1024
 
     # Allowed image file extensions
-    ALLOWED_EXTENSIONS = {
-        "png",
-        "jpg",
-        "jpeg"
-    }
+    ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}

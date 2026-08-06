@@ -1,7 +1,6 @@
 from app.utils.security import hash_password
 from app.utils.security import verify_password
 
-
 password = "test123"
 
 hashed_password = hash_password(password)

@@ -23,7 +23,6 @@ from app.routes.admin_dashboard import admin_dashboard_bp
 from app.routes.admin_comment import admin_comment_bp
 from app.routes.admin_logs import admin_logs_bp
 
-from app.models import User
 
 migrate = Migrate()
 
@@ -56,21 +55,15 @@ def create_app():
     app.register_blueprint(admin_dashboard_bp)
     app.register_blueprint(admin_comment_bp)
     app.register_blueprint(admin_logs_bp)
-    
 
     @app.route("/")
     def home():
-        return {
-            "message": "ConsumerConnect Backend Running",
-            "status": "success"
-        }
+        return {"message": "ConsumerConnect Backend Running", "status": "success"}
 
     @app.route("/uploads/<filename>")
     def uploaded_file(filename):
-        return send_from_directory(
-            app.config["UPLOAD_FOLDER"],
-            filename
-        )
+        return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
+
     print("\n===== REGISTERED ROUTES =====")
     for rule in sorted(app.url_map.iter_rules(), key=lambda r: str(r)):
         print(rule, rule.methods)

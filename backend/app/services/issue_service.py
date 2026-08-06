@@ -2,18 +2,11 @@ from app.extensions import db
 from app.models.issue import Issue
 from datetime import datetime
 from app.ai.duplicate_detector import find_duplicate
-from app.ai.category_classifier import classify_issue
 from app.ai.predictor import predict_complaint
 from app.services.history_service import create_history
 
-def create_issue(
-    title,
-    description,
-    company,
-    category,
-    user_id,
-    image_url=None
-):
+
+def create_issue(title, description, company, category, user_id, image_url=None):
 
     duplicate = find_duplicate(title, description)
 
@@ -25,9 +18,9 @@ def create_issue(
             "duplicate_issue": {
                 "id": duplicate["issue"].id,
                 "title": duplicate["issue"].title,
-                "similarity": round(duplicate["score"], 2)
+                "similarity": round(duplicate["score"], 2),
             },
-            "status_code": 409
+            "status_code": 409,
         }
 
     title = title.strip()
@@ -35,9 +28,7 @@ def create_issue(
     company = company.strip()
 
     ai_result = predict_complaint(
-        complaint=description,
-        support_count=0,
-        images_attached=1 if image_url else 0
+        complaint=description, support_count=0, images_attached=1 if image_url else 0
     )
 
     if not category:
@@ -55,7 +46,7 @@ def create_issue(
         severity=severity,
         estimated_resolution_days=resolution_days,
         user_id=user_id,
-        image_url=image_url
+        image_url=image_url,
     )
 
     db.session.add(issue)
@@ -64,7 +55,7 @@ def create_issue(
         issue_id=issue.id,
         action="created",
         performed_by="User",
-        message="Complaint created successfully."
+        message="Complaint created successfully.",
     )
 
     return {
@@ -73,9 +64,11 @@ def create_issue(
             "severity": severity,
             "category": category,
             "estimated_resolution_days": resolution_days,
-            "spam": spam
-        }
+            "spam": spam,
+        },
     }
+
+
 def get_all_issues(page=1, limit=10, sort="latest"):
 
     query = Issue.query.filter_by(is_deleted=False).filter_by(is_deleted=False)
@@ -88,37 +81,26 @@ def get_all_issues(page=1, limit=10, sort="latest"):
 
     elif sort == "trending":
         query = query.order_by(Issue.trending_score.desc())
-    issues = query.paginate(
-        page=page,
-        per_page=limit,
-        error_out=False
-    )
+    issues = query.paginate(page=page, per_page=limit, error_out=False)
 
     return issues
 
 
 def get_issue_by_id(issue_id):
-    return Issue.query.filter_by(
-    id=issue_id,
-    is_deleted=False
-).first()
+    return Issue.query.filter_by(id=issue_id, is_deleted=False).first()
 
 
 def update_issue(issue_id, user_id, data):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     if issue.user_id != user_id:
         return {
             "success": False,
             "status_code": 403,
-            "message": "You are not authorized to update this issue"
+            "message": "You are not authorized to update this issue",
         }
 
     if "title" in data:
@@ -145,14 +127,14 @@ def update_issue(issue_id, user_id, data):
         issue_id=issue.id,
         action="updated",
         performed_by="User",
-        message="Complaint details were updated."
+        message="Complaint details were updated.",
     )
 
     return {
         "success": True,
         "status_code": 200,
         "message": "Issue updated successfully",
-        "issue": issue
+        "issue": issue,
     }
 
 
@@ -160,17 +142,13 @@ def delete_issue(issue_id, user_id):
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     if issue.user_id != user_id:
         return {
             "success": False,
             "status_code": 403,
-            "message": "You are not authorized to delete this issue"
+            "message": "You are not authorized to delete this issue",
         }
 
     issue.is_deleted = True
@@ -180,75 +158,56 @@ def delete_issue(issue_id, user_id):
         issue_id=issue.id,
         action="deleted",
         performed_by="User",
-        message="Complaint was deleted."
+        message="Complaint was deleted.",
     )
 
     return {
         "success": True,
         "status_code": 200,
-        "message": "Issue deleted successfully"
+        "message": "Issue deleted successfully",
     }
+
+
 def search_issues(search=None, company=None, category=None, status=None, severity=None):
 
     query = Issue.query.filter_by(is_deleted=False).filter_by(is_deleted=False)
 
     if search:
-        query = query.filter(
-            Issue.title.ilike(f"%{search}%")
-        )
+        query = query.filter(Issue.title.ilike(f"%{search}%"))
 
     if company:
-        query = query.filter(
-            Issue.company.ilike(f"%{company}%")
-        )
+        query = query.filter(Issue.company.ilike(f"%{company}%"))
 
     if category:
-        query = query.filter(
-            Issue.category.ilike(f"%{category}%")
-        )
+        query = query.filter(Issue.category.ilike(f"%{category}%"))
 
     if status:
-        query = query.filter(
-            Issue.status == status
-        )
+        query = query.filter(Issue.status == status)
 
     if severity:
-        query = query.filter(
-            Issue.severity == severity
-        )
+        query = query.filter(Issue.severity == severity)
 
     return query.all()
+
+
 def update_issue_status(issue_id, user_id, status, resolution_note=None):
 
     issue = db.session.get(Issue, issue_id)
 
     if not issue:
-        return {
-            "success": False,
-            "status_code": 404,
-            "message": "Issue not found"
-        }
+        return {"success": False, "status_code": 404, "message": "Issue not found"}
 
     if issue.user_id != user_id:
         return {
             "success": False,
             "status_code": 403,
-            "message": "You are not authorized to update this issue"
+            "message": "You are not authorized to update this issue",
         }
 
-    valid_statuses = [
-        "Open",
-        "In Progress",
-        "Resolved",
-        "Closed"
-    ]
+    valid_statuses = ["Open", "In Progress", "Resolved", "Closed"]
 
     if status not in valid_statuses:
-        return {
-            "success": False,
-            "status_code": 400,
-            "message": "Invalid status"
-        }
+        return {"success": False, "status_code": 400, "message": "Invalid status"}
 
     issue.status = status
 
@@ -266,5 +225,5 @@ def update_issue_status(issue_id, user_id, status, resolution_note=None):
         "success": True,
         "status_code": 200,
         "message": "Issue status updated successfully",
-        "issue": issue
+        "issue": issue,
     }

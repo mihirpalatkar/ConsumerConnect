@@ -18,10 +18,10 @@ def get_all_users():
                 "name": user.name,
                 "email": user.email,
                 "role": user.role,
-                "created_at": user.created_at.strftime("%d-%m-%Y %H:%M")
+                "created_at": user.created_at.strftime("%d-%m-%Y %H:%M"),
             }
             for user in users
-        ]
+        ],
     }
 
 
@@ -48,8 +48,8 @@ def get_all_issues():
                 "trending_score": issue.trending_score,
                 "estimated_resolution_days": issue.estimated_resolution_days,
                 "created_by": issue.user.name,
-                "created_at": issue.created_at.strftime("%d-%m-%Y %H:%M")
+                "created_at": issue.created_at.strftime("%d-%m-%Y %H:%M"),
             }
             for issue in issues
-        ]
+        ],
     }
