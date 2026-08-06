@@ -1,11 +1,12 @@
 from app.extensions import db
 from app.models.company_response import CompanyResponse
 from app.models.issue import Issue
+from app.services.history_service import create_history
 
 
 def add_response(company_name, issue_id, response):
 
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return {
@@ -29,6 +30,13 @@ def add_response(company_name, issue_id, response):
 
     db.session.add(company_response)
     db.session.commit()
+
+    create_history(
+        issue_id=issue.id,
+        action="company_response",
+        performed_by=company_name,
+        message=f"{company_name} posted an official response."
+    )
 
     return {
         "success": True,

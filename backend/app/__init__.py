@@ -17,6 +17,11 @@ from app.routes.company_response import company_response_bp
 from app.routes.dashboard import dashboard_bp
 from app.routes.admin import admin_bp
 from app.routes.company import company_bp
+from app.routes.history import history_bp
+from app.routes.feedback import feedback_bp
+from app.routes.admin_dashboard import admin_dashboard_bp
+from app.routes.admin_comment import admin_comment_bp
+from app.routes.admin_logs import admin_logs_bp
 
 from app.models import User
 
@@ -46,6 +51,12 @@ def create_app():
     app.register_blueprint(dashboard_bp)
     app.register_blueprint(admin_bp)
     app.register_blueprint(company_bp)
+    app.register_blueprint(history_bp)
+    app.register_blueprint(feedback_bp)
+    app.register_blueprint(admin_dashboard_bp)
+    app.register_blueprint(admin_comment_bp)
+    app.register_blueprint(admin_logs_bp)
+    
 
     @app.route("/")
     def home():
@@ -60,5 +71,9 @@ def create_app():
             app.config["UPLOAD_FOLDER"],
             filename
         )
+    print("\n===== REGISTERED ROUTES =====")
+    for rule in sorted(app.url_map.iter_rules(), key=lambda r: str(r)):
+        print(rule, rule.methods)
+    print("=============================\n")
 
     return app

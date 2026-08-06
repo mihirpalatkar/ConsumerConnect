@@ -43,12 +43,25 @@ def allowed_file(filename):
 @jwt_required()
 def create():
 
-    title = request.form.get("title")
-    description = request.form.get("description")
-    company = request.form.get("company")
-    category = request.form.get("category")
+    if request.is_json:
 
-    image = request.files.get("image")
+        data = request.get_json()
+
+        title = data.get("title")
+        description = data.get("description")
+        company = data.get("company")
+        category = data.get("category")
+
+        image = None
+
+    else:
+
+        title = request.form.get("title")
+        description = request.form.get("description")
+        company = request.form.get("company")
+        category = request.form.get("category")
+
+        image = request.files.get("image")
     if not all([title, description, company]):
         return jsonify({
             "success": False,

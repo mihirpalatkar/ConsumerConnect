@@ -31,6 +31,12 @@ class Company(db.Model):
         default=datetime.utcnow
     )
 
+    is_blocked = db.Column(
+        db.Boolean,
+        default=False,
+        nullable=False
+    )
+
     # Relationship with complaints
     issues = db.relationship(
         "Issue",

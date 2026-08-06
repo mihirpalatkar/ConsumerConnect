@@ -46,12 +46,23 @@ def login_user(email, password):
 
     # Find user by email
     user = User.query.filter_by(email=email).first()
+    if not user:
+        return {
+            "success": False,
+            "message": "Invalid email or password"
+        }
 
     # Check if user exists
     if not user:
         return {
             "success": False,
             "message": "Invalid email or password"
+        }
+    if user.is_blocked:
+        return {
+            "success": False,
+            "status_code": 403,
+            "message": "Your account has been blocked. Please contact the administrator."
         }
 
     # Verify password

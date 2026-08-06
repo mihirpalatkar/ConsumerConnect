@@ -647,3 +647,693 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:5000/api/company/dashboard
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MjA1MiwianRpIjoiMTQ5ZGQ2ZDktODEzOC00ZmZkLWEzMGYtMjE1ZDcyNGNlMTg5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTE2MjA1MiwiY3NyZiI6IjUzYjc4ODY1LTMxYTctNGQ5Yy1hMjAzLTk2MTc5MDcxNmEwMCIsImV4cCI6MTc4NTE2Mjk1Mn0.hR2ORCSF37qysaFV3A70XHClyJogVanHj98g_Kvjo2s
+
+####
+
+GET http://127.0.0.1:5000/api/company/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MzI0MCwianRpIjoiZjZmNTAxODMtZmU0Ni00ZWQ3LTk0OWMtNGUyNDdhMzg1N2E1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTE2MzI0MCwiY3NyZiI6ImIyZDZmOTA5LWNhYWMtNDgwYi04MzI0LTc2Mzk4MjM3OGI3YiIsImV4cCI6MTc4NTE2NDE0MH0.2NB_zrZwDsJp2i2xOdUdJd5ono6XmolaR1bbMokZpyc
+
+###
+GET http://127.0.0.1:5000/api/company/issues/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MzUyMiwianRpIjoiMzAwODU3ZmEtNjgwZS00Y2I2LThhNDQtZTE5OTU1YmI2MDIzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTE2MzUyMiwiY3NyZiI6IjZmMmQ2ZTcxLTA2Y2QtNDhkNS05NDU2LTYyOGU3YWEwNThlOCIsImV4cCI6MTc4NTE2NDQyMn0.yQniMwUTxAByFzyuxJscy9GMBCf0E1JmCPZS1vHDSDo
+
+####
+POST http://127.0.0.1:5000/api/issues
+Content-Type: application/json
+
+
+{
+
+    "title": "Late Delivery",
+    "description": "My package was delayed by 5 days.",
+    "company": "Amazon",
+    "category": "Delivery"
+}
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTE2MzcyMCwianRpIjoiODAwN2MyYzAtMjAxYS00NDhiLThmOWYtZmY4YjFhNWIwMjY2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUxNjM3MjAsImNzcmYiOiIwMWFjMTQ2ZC0wNGQwLTRkZGUtYTAzYS00YWM3ODRlM2U1MzYiLCJleHAiOjE3ODUxNjQ2MjAsInJvbGUiOiJBZG1pbiJ9.zl8W3PZznVVVex8z4kkaOu_AdAH9c1-t4oRKxZ12KHA
+Content-Type: multipart/form-data
+
+{
+    "title": "Late Delivery",
+    "description": "My package was delayed by 5 days.",
+    "company": "Amazon",
+    "category": "Delivery"
+}
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MDUyNywianRpIjoiZTQ3ZDQwNzEtZmZlMi00MTc5LWIyNmYtY2Y0Y2MxY2U3ZGZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDA1MjcsImNzcmYiOiI3ZTM2ZmRjZC0yYmE1LTQ5MTgtOTkwMi1jZDFhNzZiMjc1MjciLCJleHAiOjE3ODUyNDE0MjcsInJvbGUiOiJVc2VyIn0.PkwkgDZ0-nVcU5OMVQhqQlVseaW5FAgWXACHdhoadFA
+Content-Type: application/json
+
+{
+    "title": "Late Delivery",
+    "description": "My package was delayed by 5 days.",
+    "company": "Amazon",
+    "category": "Delivery"
+}
+###
+POST http://127.0.0.1:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Rahul Sharma",
+    "email": "rahul@example.com",
+    "password": "Password@123"
+}
+
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "rahul@example.com",
+    "password": "Password@123"
+}
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0ODYwNCwianRpIjoiMWFiMTdmNjEtNGU3Ny00ZDc1LThkYWMtMGVlMGIyMzhkMGRmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDg2MDQsImNzcmYiOiI5MzU4MzdkMy01NWMxLTQyMjgtODRkOS0yNWIyYTRlNGY5ODMiLCJleHAiOjE3ODUyNDk1MDQsInJvbGUiOiJVc2VyIn0.Vbr5RvPduLGoVwckKyOuOdOxJWi1Qlj3EUyaOs0EXwc
+Content-Type: application/json
+
+{
+    "title": "Refund not received",
+    "description": "Amazon approved my refund but I haven't received the money after 10 days.",
+    "company": "Amazon",
+    "category": "Refund"
+}
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MDUyNywianRpIjoiZTQ3ZDQwNzEtZmZlMi00MTc5LWIyNmYtY2Y0Y2MxY2U3ZGZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDA1MjcsImNzcmYiOiI3ZTM2ZmRjZC0yYmE1LTQ5MTgtOTkwMi1jZDFhNzZiMjc1MjciLCJleHAiOjE3ODUyNDE0MjcsInJvbGUiOiJVc2VyIn0.PkwkgDZ0-nVcU5OMVQhqQlVseaW5FAgWXACHdhoadFA
+Content-Type: application/json
+
+{
+    "title": "Damaged Product",
+    "description": "The laptop arrived with a cracked screen.",
+    "company": "Amazon",
+    "category": "Product Quality"
+}
+###
+GET http://127.0.0.1:5000/api/company/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MDY2NywianRpIjoiMmNiZWM0YzItMzAzYy00MGVmLWJjMGUtMjY5YWMzM2U4OGZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0MDY2NywiY3NyZiI6IjI4NTkwZTYxLWUxNDUtNDUyNS05Mzg0LTJiYWVlMjg3ZTFhYyIsImV4cCI6MTc4NTI0MTU2N30.XJCeEnVNH5RBYmhc9JDhWCjelkCLjLiBCnYbzLWgE-0
+###
+
+GET http://127.0.0.1:5000/api/company/issues/13
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MTIwOCwianRpIjoiYzZmYmNiMDUtM2ExOC00ZDFiLTkwYjUtZjVlNWU3ODYzZGM5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0MTIwOCwiY3NyZiI6IjgxZDc3ZDI4LTJhYjktNGVlYi04Y2M5LTcyYjAxODliOWM2MyIsImV4cCI6MTc4NTI0MjEwOH0.MzJMOtFCvR6cMuKoptvPVaSY8zoIDtRVGy36sxVMzTk
+###
+PATCH http://127.0.0.1:5000/api/company/issues/14/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0ODY3NywianRpIjoiNWVhZGFhNGEtNDEwZC00NzcxLTkwYTktM2ZhYTNmMTg5OWE2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0ODY3NywiY3NyZiI6IjAwMDljNzhmLTBiODctNGZmMS1hZTliLWIwMDFjNDU0M2FjZiIsImV4cCI6MTc4NTI0OTU3N30.JiHjTT8lR0fBKBMMtQcvEu81msKWFNc34fIZEKBAS04
+Content-Type: application/json
+
+{
+    "status": "In Progress"
+}
+###
+PATCH http://127.0.0.1:5000/api/company/issues/14/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0ODY3NywianRpIjoiNWVhZGFhNGEtNDEwZC00NzcxLTkwYTktM2ZhYTNmMTg5OWE2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0ODY3NywiY3NyZiI6IjAwMDljNzhmLTBiODctNGZmMS1hZTliLWIwMDFjNDU0M2FjZiIsImV4cCI6MTc4NTI0OTU3N30.JiHjTT8lR0fBKBMMtQcvEu81msKWFNc34fIZEKBAS04
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "resolution_note": "Replacement product has been shipped."
+}
+
+###
+GET http://127.0.0.1:5000/api/company/issues/13/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MzQ2OSwianRpIjoiOGM4MmNmNDEtNzVjZC00MGQ4LWIyNWUtNWNiOWUzM2VkNjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0MzQ2OSwiY3NyZiI6IjkxN2JlNmRlLTViYzgtNDZiMS04NzYzLTMxYWZkNTI0YzBjZSIsImV4cCI6MTc4NTI0NDM2OX0.CA3Bzun4QZZK-fFV0n6HdQe6uMIxofAlHZ3d2fZMeCM
+Content-Type: application/json
+
+{
+    "status": "In Progress"
+}
+###
+PATCH http://127.0.0.1:5000/api/company/issues/13/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0MzQ2OSwianRpIjoiOGM4MmNmNDEtNzVjZC00MGQ4LWIyNWUtNWNiOWUzM2VkNjE1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0MzQ2OSwiY3NyZiI6IjkxN2JlNmRlLTViYzgtNDZiMS04NzYzLTMxYWZkNTI0YzBjZSIsImV4cCI6MTc4NTI0NDM2OX0.CA3Bzun4QZZK-fFV0n6HdQe6uMIxofAlHZ3d2fZMeCM
+Content-Type: application/json
+
+{
+    "status": "In Progress"
+}
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email": "amazon@gmail.com",
+    "password": "12345678"
+}
+###
+PATCH http://127.0.0.1:5000/api/company/issues/13/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NDMwMCwianRpIjoiZmRhNzA5NTItMTBkNS00ZjM1LWJiMjctZDRhYWUxNTVjZjY4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0NDMwMCwiY3NyZiI6IjIxNWNlOGQxLTlhMTAtNGU0Mi04N2M5LTdjN2VkMjg3NTI2ZiIsImV4cCI6MTc4NTI0NTIwMH0.YrTtksPMtgmeXTr63dkDq1djcmYF6DKK2BTbtoOcFHI
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "resolution_note": "Replacement product has been shipped."
+}
+
+###
+GET http://127.0.0.1:5000/api/notifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NDQ5MSwianRpIjoiOGNlMThiNTQtZWI2Ny00YWMyLTg0YjEtY2VmYWQwYzU2MWIzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDQ0OTEsImNzcmYiOiIwNmNhZWQwOC1mMTM4LTRiMDctOWVlZC01NjgyYTJkZGU1ODkiLCJleHAiOjE3ODUyNDUzOTEsInJvbGUiOiJVc2VyIn0.lUthB0tb_dr11Umf7BFUPH-zgiBgFdkaxLgnvV8z1Nc
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0ODUzMCwianRpIjoiZDc2OTJlYjctZTE5Yy00MmY1LWIzY2UtOGQ1NDg5MjZmMWE5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDg1MzAsImNzcmYiOiIzYWFiYzJlZC03ODFlLTRlN2MtYTE4Zi01ZTM4ZTNkZWM1NjgiLCJleHAiOjE3ODUyNDk0MzAsInJvbGUiOiJVc2VyIn0.IvbI-FZEIy-SCXiY_j8QHdx0PNT2HNua9DEYy7iLaJg
+Content-Type: application/json
+
+{
+    "title": "Product received damaged",
+    "description": "The laptop screen is broken.",
+    "company": "Amazon",
+    "category": "Product Quality"
+}
+
+###
+PUT http://127.0.0.1:5000/api/issues/15
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NjMzNSwianRpIjoiNDk0ZDNhZjktNGE4ZS00ZTc4LTlhMjgtMjMwMzhmNDQwYTdiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDYzMzUsImNzcmYiOiJjZjBiZGVlNy1iY2VlLTQ0YjctYjkyNy05OTY0NTM4ZTAxYjAiLCJleHAiOjE3ODUyNDcyMzUsInJvbGUiOiJVc2VyIn0.ryv0m7f7g0iFcFjQ_E-irvSQ8QBV13--ajgxAS1rCaM
+Content-Type: application/json
+
+{
+    "title": "Laptop received damaged",
+    "description": "The laptop screen is broken and the keyboard is not working.",
+    "company": "Amazon",
+    "category": "Product Quality"
+}
+###
+PATCH http://127.0.0.1:5000/api/company/issues/15/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NjM4MCwianRpIjoiYjY4ZTU5NDQtMDMzMy00NWY3LTlkYzEtOWVjNTc0MjQzMGM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0NjM4MCwiY3NyZiI6IjM4N2YzMDllLWRjZDQtNDllYi04YjRkLTM3ZWZlYzcxNjNlZCIsImV4cCI6MTc4NTI0NzI4MH0.Y1lV3ZUGEAF1UGZLhwOCOQUB1qACUgumNIRlJbyKEZY
+Content-Type: application/json
+
+{
+    "status": "In Progress"
+}
+###
+
+POST http://127.0.0.1:5000/api/company/responses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NjM4MCwianRpIjoiYjY4ZTU5NDQtMDMzMy00NWY3LTlkYzEtOWVjNTc0MjQzMGM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0NjM4MCwiY3NyZiI6IjM4N2YzMDllLWRjZDQtNDllYi04YjRkLTM3ZWZlYzcxNjNlZCIsImV4cCI6MTc4NTI0NzI4MH0.Y1lV3ZUGEAF1UGZLhwOCOQUB1qACUgumNIRlJbyKEZY
+Content-Type: application/json
+
+{
+    "issue_id": 15,
+    "response": "We sincerely apologize. Our team is investigating the issue."
+}
+
+###
+
+PATCH http://127.0.0.1:5000/api/company/issues/15/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NjM4MCwianRpIjoiYjY4ZTU5NDQtMDMzMy00NWY3LTlkYzEtOWVjNTc0MjQzMGM2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI0NjM4MCwiY3NyZiI6IjM4N2YzMDllLWRjZDQtNDllYi04YjRkLTM3ZWZlYzcxNjNlZCIsImV4cCI6MTc4NTI0NzI4MH0.Y1lV3ZUGEAF1UGZLhwOCOQUB1qACUgumNIRlJbyKEZY
+Content-Type: application/json
+
+{
+    "status": "Resolved",
+    "resolution_note": "Replacement laptop has been shipped."
+}
+###
+
+GET http://127.0.0.1:5000/api/issues/15/history
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0NzU0OCwianRpIjoiYTY5NjA4MzEtNTY3Zi00NjUxLWIzOWQtNjg2OGE2MWEzODMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDc1NDgsImNzcmYiOiJjMWQ3MTAyMy1jYzhjLTQyYjctYWFkMy1iZjZiMmVmOTk3ZWIiLCJleHAiOjE3ODUyNDg0NDgsInJvbGUiOiJVc2VyIn0.9VAurEhbzQoxORye4D3PkyE-YxlNm6GWXltMIsRaQIw
+###
+POST http://127.0.0.1:5000/api/issues/15/feedback
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0OTM4NCwianRpIjoiMjAyOGUwMjEtMzMxMi00NGM0LThmZGYtMzhmZjI0MDA5MDBiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDkzODQsImNzcmYiOiI5NmZkNjlkNy01YzIwLTQ5ZDQtOWVlOS0zZGNkNjU2MDE5NzgiLCJleHAiOjE3ODUyNTAyODQsInJvbGUiOiJVc2VyIn0.bqexAuc40k6ord08w7488S5OMz5qJXnH3DfXr66LuTY
+Content-Type: application/json
+
+{
+    "rating": 5,
+    "comment": "Excellent service. My issue was resolved quickly."
+}
+
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "rahul@example.com",
+    "password": "Password@123"
+}
+
+###
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI0ODc4NywianRpIjoiZWJhMjAzMTQtZDc0NS00MmZhLWFiZDYtNjA1Yjc4YjdhZTI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3ODUyNDg3ODcsImNzcmYiOiJkYjZhZjMwZS0wZjI4LTRkNTQtODkxMC0yNzZjZGYxNmQ5YTgiLCJleHAiOjE3ODUyNDk2ODcsInJvbGUiOiJVc2VyIn0.30EkAhTAMO-S9jMyfK4P6zxs-hWrZoqWIH35JBGuxUM
+####
+GET http://127.0.0.1:5000/api/company/dashboard/analytics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MTMzMSwianRpIjoiMzcyODRhZGItN2VjMC00MDU5LThkYTMtYjI1NGUxOGM0ODNiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MTMzMSwiY3NyZiI6IjkzNDY0ZmU0LTYyMzctNGM4ZC04NDhmLTI3NjA0ZTUxMjQ4MiIsImV4cCI6MTc4NTI1MjIzMX0.XE95qn9z_rATcQRt4tjZJNaFJVhIPm1k8iA2dheRwSc
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email": "amazon@gmail.com",
+    "password": "12345678"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard/rating-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MTMzMSwianRpIjoiMzcyODRhZGItN2VjMC00MDU5LThkYTMtYjI1NGUxOGM0ODNiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MTMzMSwiY3NyZiI6IjkzNDY0ZmU0LTYyMzctNGM4ZC04NDhmLTI3NjA0ZTUxMjQ4MiIsImV4cCI6MTc4NTI1MjIzMX0.XE95qn9z_rATcQRt4tjZJNaFJVhIPm1k8iA2dheRwSc
+###
+GET http://127.0.0.1:5000/api/company/dashboard/category-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MTMzMSwianRpIjoiMzcyODRhZGItN2VjMC00MDU5LThkYTMtYjI1NGUxOGM0ODNiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MTMzMSwiY3NyZiI6IjkzNDY0ZmU0LTYyMzctNGM4ZC04NDhmLTI3NjA0ZTUxMjQ4MiIsImV4cCI6MTc4NTI1MjIzMX0.XE95qn9z_rATcQRt4tjZJNaFJVhIPm1k8iA2dheRwSc
+###
+GET http://127.0.0.1:5000/api/company/dashboard/monthly-trends
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MTMzMSwianRpIjoiMzcyODRhZGItN2VjMC00MDU5LThkYTMtYjI1NGUxOGM0ODNiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MTMzMSwiY3NyZiI6IjkzNDY0ZmU0LTYyMzctNGM4ZC04NDhmLTI3NjA0ZTUxMjQ4MiIsImV4cCI6MTc4NTI1MjIzMX0.XE95qn9z_rATcQRt4tjZJNaFJVhIPm1k8iA2dheRwSc
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "name": "Test Company",
+    "email": "testcompany@gmail.com",
+    "password": "12345678"
+}
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "email":"abc@gmail.com"
+}
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email":"testcompany@gmail.com",
+    "password":"12345678"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjU1MiwianRpIjoiM2NiYWU1OWUtZDBlNy00MDZkLWFhNjgtNTFjYjFhZmYwZTRiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MyIsIm5iZiI6MTc4NTI1MjU1MiwiY3NyZiI6IjAxM2ExZGNiLTUwZmEtNGRlNy05ZjNkLTdjOTQwNTFjNDk1OCIsImV4cCI6MTc4NTI1MzQ1Miwicm9sZSI6IkNvbXBhbnkifQ.bmsomfSqbG1xJ1cyyQfREv7GF17ajdcNtqYhCYBLKnA
+
+###
+GET http://127.0.0.1:5000/api/company/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+GET http://127.0.0.1:5000/api/company/issues/14
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+PATCH http://127.0.0.1:5000/api/company/issues/14/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+Content-Type: application/json
+
+{
+    "status":"Resolved",
+    "resolution_note":"Issue fixed successfully"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard/analytics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+GET http://127.0.0.1:5000/api/company/dashboard/rating-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+GET http://127.0.0.1:5000/api/company/dashboard/category-distribution
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+GET http://127.0.0.1:5000/api/company/dashboard/monthly-trends
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1MjYwMCwianRpIjoiNWUwNjQ0NTItODk2My00MzRkLTljNDAtZjYwNjAxNWQxNThkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6MiIsIm5iZiI6MTc4NTI1MjYwMCwiY3NyZiI6IjU2ZDE4NDdkLTQ0NDYtNDU0MS1hYmZiLTc4NzU5YmEwZjBhOSIsImV4cCI6MTc4NTI1MzUwMCwicm9sZSI6IkNvbXBhbnkifQ.GxTHyutGOqOM4mBM2ewSEiU2O3Ol1oDYFXZiVxaUWTQ
+###
+GET http://127.0.0.1:5000/api/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMwOTc0NSwianRpIjoiYWRjN2ZkMDktMjgyNy00OTE3LWIwYjEtZDZhZWE1NWFlOThmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMDk3NDUsImNzcmYiOiJmYjQxOWU2MC00MmM3LTQ0YWUtOTc1Yi00NWRiNjJkOGJiNzEiLCJleHAiOjE3ODUzMTA2NDUsInJvbGUiOiJBZG1pbiJ9.nfdh8-uM_QZEn6EW3GikU3oZD5C1aK97_Yjcm3Mhets
+Content-Type: application/json
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+###
+GET http://127.0.0.1:5000/api/admin/users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxMTM5NywianRpIjoiNmI3ZTgyN2UtNGZjMy00MWIzLThiNDUtMmQ5NTQ0OGVlNDZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTEzOTcsImNzcmYiOiI0ODA1YzI1YS0xZTViLTQ1ZjItYmE4Mi04YTM4ZTcyN2MyYmMiLCJleHAiOjE3ODUzMTIyOTcsInJvbGUiOiJBZG1pbiJ9.WrNtEh83Nc9TZ7VC35dgqW65ImHe4L0I20GwBULLb5I
+###
+PATCH http://127.0.0.1:5000/api/admin/users/3/unblock
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzE5MiwianRpIjoiYTk2ODU5NDMtMmIwYi00YmM5LTg4YTMtMWRmY2JjYjFjYmQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTcxOTIsImNzcmYiOiIwZGZjNGJhNy0zYTY2LTQ1ZDUtOGY2Ny03OWM2NWU0ZjNiYzIiLCJleHAiOjE3ODUzMTgwOTIsInJvbGUiOiJBZG1pbiJ9.mq6hDaNLiTe3bwbdwF5k1Y6A9SMbsuV0hyZy4lD1hWQ
+
+###
+GET http://127.0.0.1:5000/api/admin/users/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTI1NTQzMSwianRpIjoiMWMwOWIzMWEtZDdiYS00NTJlLWJiMTctODBlNjFmOTY4ZTRhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUyNTU0MzEsImNzcmYiOiIzOTE3MWZkYy1mOGQ2LTQ3ZmYtYmUwMi1jZDg1YjRkZDAwYmEiLCJleHAiOjE3ODUyNTYzMzEsInJvbGUiOiJBZG1pbiJ9.pDhK6bnD6QJH3XDoDzbLphiG1GxEskET_lYkl64WpvE
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user2@gmail.com",
+    "password": "123456"
+}
+
+###
+PATCH http://127.0.0.1:5000/api/admin/users/3/block
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxMTM5NywianRpIjoiNmI3ZTgyN2UtNGZjMy00MWIzLThiNDUtMmQ5NTQ0OGVlNDZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTEzOTcsImNzcmYiOiI0ODA1YzI1YS0xZTViLTQ1ZjItYmE4Mi04YTM4ZTcyN2MyYmMiLCJleHAiOjE3ODUzMTIyOTcsInJvbGUiOiJBZG1pbiJ9.WrNtEh83Nc9TZ7VC35dgqW65ImHe4L0I20GwBULLb5I
+
+###
+GET http://127.0.0.1:5000/api/admin/companies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxMDQ2OCwianRpIjoiNmJmYzgyYjAtYjdjNy00ZjM5LTg4ZmYtZTk5YmNjM2Y2ZTUwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTA0NjgsImNzcmYiOiI0OGY0YjdlMS1kNjZkLTQ4N2QtOTg5NC1jMWU2YWM5YmM1NjQiLCJleHAiOjE3ODUzMTEzNjgsInJvbGUiOiJBZG1pbiJ9.gZzMRLAdVFfrkdXksNS0Ix1urqVAmwLe1aJvuYmEbDM
+###
+GET http://127.0.0.1:5000/api/admin/companies/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxMTU4OCwianRpIjoiYjdmYmZmYzAtNTBiNy00ZTBmLThiNmMtMmY5ZDU1ZWQzZDIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTE1ODgsImNzcmYiOiJlYjUwYTkwNy0xZjcwLTRmMGQtODY3YS01YTdhNjc2OThmM2EiLCJleHAiOjE3ODUzMTI0ODgsInJvbGUiOiJBZG1pbiJ9.7K5F6dxgTVMhGKxRY8xe3K1nkHnhX7GFkY2CdJzV_Ck
+
+
+###
+PATCH http://127.0.0.1:5000/api/admin/companies/3/block
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxMTU4OCwianRpIjoiYjdmYmZmYzAtNTBiNy00ZTBmLThiNmMtMmY5ZDU1ZWQzZDIyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTE1ODgsImNzcmYiOiJlYjUwYTkwNy0xZjcwLTRmMGQtODY3YS01YTdhNjc2OThmM2EiLCJleHAiOjE3ODUzMTI0ODgsInJvbGUiOiJBZG1pbiJ9.7K5F6dxgTVMhGKxRY8xe3K1nkHnhX7GFkY2CdJzV_Ck
+
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email":"testcompany@gmail.com",
+    "password":"12345678"
+}
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+###
+GET http://127.0.0.1:5000/api/admin/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzI2NSwianRpIjoiMjFlY2M3ZTktYmMwZS00OWZkLTliMTQtMDJiYmM2MjVmMjdkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTcyNjUsImNzcmYiOiJjMmIyOWM4Ny0zYjQ0LTRhMjUtYTg2ZC1kMjQxMzZhZjIyMTQiLCJleHAiOjE3ODUzMTgxNjUsInJvbGUiOiJBZG1pbiJ9.HmcwzplghwuMUO_vSTE234h0uV73bW8HYXVIO9CgfCM
+
+Content-Type: application/json
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/4/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNDM1OCwianRpIjoiYWEwYjYyYzgtMTQ5OC00NDg0LTg2MGEtMTVmYzg5NTZiZGRmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTQzNTgsImNzcmYiOiJkYmZjZDUwZi1jMGFhLTQ4NWMtYjFjZS1iODQ2MzhlYzEwMTYiLCJleHAiOjE3ODUzMTUyNTgsInJvbGUiOiJBZG1pbiJ9.46sAsiYQ2GPFla0kAh4BLS05u0YhOWpox2pip4XSbhg
+
+Content-Type: application/json
+{
+    "status": "Resolved"
+}
+
+###
+DELETE http://127.0.0.1:5000/api/admin/issues/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzI2NSwianRpIjoiMjFlY2M3ZTktYmMwZS00OWZkLTliMTQtMDJiYmM2MjVmMjdkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTcyNjUsImNzcmYiOiJjMmIyOWM4Ny0zYjQ0LTRhMjUtYTg2ZC1kMjQxMzZhZjIyMTQiLCJleHAiOjE3ODUzMTgxNjUsInJvbGUiOiJBZG1pbiJ9.HmcwzplghwuMUO_vSTE234h0uV73bW8HYXVIO9CgfCM
+
+
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/4/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzgyMSwianRpIjoiODNmNjdlMjMtODgwMi00MzUwLTg1YTItMzM1YWQ0YjllNWZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzMTc4MjEsImNzcmYiOiI3Zjc0OTRkYS1jNWExLTQ0ZjMtYjg0Zi03YTM4NTJjODBjOTciLCJleHAiOjE3ODUzMTg3MjEsInJvbGUiOiJBZG1pbiJ9.lnXVC0eNmH3UXLiwrKyOAl78Wl1No5cYb-cvudGPeWc
+
+###
+GET http://127.0.0.1:5000/api/issues/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzIyNCwianRpIjoiZDNmNzMzNjQtNThjYi00YjM5LWIyYWEtZTg1NGRkZjNjNmMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODUzMTcyMjQsImNzcmYiOiI2ZTUyYjcwOC01M2I1LTRjNDctYjg4NC1kY2U3NmZhMzhhYzQiLCJleHAiOjE3ODUzMTgxMjQsInJvbGUiOiJVc2VyIn0.O3biNT-0DKiLy2mwThaNwIj2jSERD1zhUfo9WkFqkQA
+####
+PUT http://127.0.0.1:5000/api/issues/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzIyNCwianRpIjoiZDNmNzMzNjQtNThjYi00YjM5LWIyYWEtZTg1NGRkZjNjNmMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODUzMTcyMjQsImNzcmYiOiI2ZTUyYjcwOC01M2I1LTRjNDctYjg4NC1kY2U3NmZhMzhhYzQiLCJleHAiOjE3ODUzMTgxMjQsInJvbGUiOiJVc2VyIn0.O3biNT-0DKiLy2mwThaNwIj2jSERD1zhUfo9WkFqkQA
+
+Content-Type: application/json
+
+{
+    "title": "Updated title",
+    "description": "Updated description"
+}
+###
+POST http://127.0.0.1:5000/api/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzIyNCwianRpIjoiZDNmNzMzNjQtNThjYi00YjM5LWIyYWEtZTg1NGRkZjNjNmMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODUzMTcyMjQsImNzcmYiOiI2ZTUyYjcwOC01M2I1LTRjNDctYjg4NC1kY2U3NmZhMzhhYzQiLCJleHAiOjE3ODUzMTgxMjQsInJvbGUiOiJVc2VyIn0.O3biNT-0DKiLy2mwThaNwIj2jSERD1zhUfo9WkFqkQA
+
+Content-Type: application/json
+
+{
+    "issue_id": 4,
+    "comment": "Testing comment"
+}
+###
+POST http://127.0.0.1:5000/api/issues/4/feedback
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxNzIyNCwianRpIjoiZDNmNzMzNjQtNThjYi00YjM5LWIyYWEtZTg1NGRkZjNjNmMyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODUzMTcyMjQsImNzcmYiOiI2ZTUyYjcwOC01M2I1LTRjNDctYjg4NC1kY2U3NmZhMzhhYzQiLCJleHAiOjE3ODUzMTgxMjQsInJvbGUiOiJVc2VyIn0.O3biNT-0DKiLy2mwThaNwIj2jSERD1zhUfo9WkFqkQA
+
+Content-Type: application/json
+{
+    "rating": 5,
+    "feedback": "Great service"
+}
+
+###
+PUT http://127.0.0.1:5000/api/issues/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTMxODU2OCwianRpIjoiMmI5NjIyNDYtMDZjMC00NDY0LWI1ZjgtMTM3MjYyZWQzOTU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODUzMTg1NjgsImNzcmYiOiI5N2U4NjkzNS1mNGJhLTRjNDAtYWVkYS0yMWU2OTNlMWFiMmQiLCJleHAiOjE3ODUzMTk0NjgsInJvbGUiOiJVc2VyIn0.I2dTkE7ag8LvgogEIQmaW9M-q0ejxHstKXEtZMIVH3E
+Content-Type: application/json
+
+{
+    "title": "Updated Title",
+    "description": "Updated Description"
+}
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/overview
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/companies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+####
+GET http://127.0.0.1:5000/api/admin/dashboard/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/severity
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/monthly-trends
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NDM5MywianRpIjoiZmUxMjUzZWYtOTM4Zi00Njk5LThjNWItMzM3M2U2MTkyMWRkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDQzOTMsImNzcmYiOiJhMmRjNTQ1Mi1lZGI0LTQzNzYtYjUwOC1iZjU5ZGE2ZmI1MzAiLCJleHAiOjE3ODUzNDUyOTMsInJvbGUiOiJBZG1pbiJ9.53tM6JB3Wc8g7YyAM5Ib9qKTmLJblSuCRpEZOzffiX4
+
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/top-companies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0NTg3MiwianRpIjoiYTI2MGU3YWMtZmMyYy00NDU3LTg5NDctZDQyZTBlNjlhNWYwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDU4NzIsImNzcmYiOiJkZmVjMWE4Mi04YzExLTQ2ZmUtOTRmMS00MjJhNmE0YzE5MjciLCJleHAiOjE3ODUzNDY3NzIsInJvbGUiOiJBZG1pbiJ9.ll5XMPelNB6IL1ea-1DrEO_sq7ApcjVjE9fYBz1Ha7k
+
+
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+    "email":"testcompany@gmail.com",
+    "password":"12345678"
+}
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+###
+GET http://127.0.0.1:5000/api/admin/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+###
+GET http://127.0.0.1:5000/api/admin/comments/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+
+###
+GET http://127.0.0.1:5000/api/admin/comments/999
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+
+###
+PATCH http://127.0.0.1:5000/api/admin/comments/3/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+
+###
+PATCH http://127.0.0.1:5000/api/admin/comments/3/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+GET http://127.0.0.1:5000/api/admin/logs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+###
+PATCH http://127.0.0.1:5000/api/admin/users/4/block
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0Nzc1NSwianRpIjoiZjIyZjllMTEtMmJkMC00NzI0LWI4ZTItODU3ZmM1OGQwMmUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDc3NTUsImNzcmYiOiJkMzQ5ZTkwMS04OWJmLTQ1NmYtYTIwYi1mMDkxYzFhNTIyNzciLCJleHAiOjE3ODUzNDg2NTUsInJvbGUiOiJBZG1pbiJ9.78l-AcQ1LGbWdGS_fLp4_y_3HdPcpODF_M_aVr9-VB0
+
+###
+PATCH http://127.0.0.1:5000/api/admin/comments/7/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0Nzc1NSwianRpIjoiZjIyZjllMTEtMmJkMC00NzI0LWI4ZTItODU3ZmM1OGQwMmUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDc3NTUsImNzcmYiOiJkMzQ5ZTkwMS04OWJmLTQ1NmYtYTIwYi1mMDkxYzFhNTIyNzciLCJleHAiOjE3ODUzNDg2NTUsInJvbGUiOiJBZG1pbiJ9.78l-AcQ1LGbWdGS_fLp4_y_3HdPcpODF_M_aVr9-VB0
+
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/3/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+###
+GET http://127.0.0.1:5000/api/admin/logs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTM0ODQzMSwianRpIjoiNDE0YTNkZWItNmU1NC00M2I5LWJiYWEtZWQyYjNkM2ZiOTliIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODUzNDg0MzEsImNzcmYiOiI4MDNiMDVmZC1jNThkLTRiODUtYjc2ZC1jNTRmMmQxYjAxNTYiLCJleHAiOjE3ODUzNDkzMzEsInJvbGUiOiJBZG1pbiJ9.wIC-w1EcG3yOJzUPP9X0bOqFhBEINK2vnhJLMXQtGys
+
+###
+POST http://127.0.0.1:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "testuser@example.com",
+  "password": "Password123"
+}
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "Password123"
+}
+
+###
+# Company Register
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "name": "Test Company",
+    "email": "company@example.com",
+    "password": "Password123"
+}
+###
+GET http://127.0.0.1:5000/api/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+
+###
+POST http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+Content-Type: application/json
+
+{
+  "title":"Internet keeps disconnecting",
+  "description":"Internet disconnects every 5 minutes.",
+  "company":"Jio Fiber",
+  "category":"Internet"
+}
+###
+GET http://127.0.0.1:5000/api/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+
+###
+GET http://127.0.0.1:5000/api/issues/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+
+###
+PUT http://127.0.0.1:5000/api/issues/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+
+Content-Type: application/json
+
+{
+  "status":"Resolved",
+  "severity":"Low"
+}
+###
+DELETE http://127.0.0.1:5000/api/issues/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+###
+POST http://127.0.0.1:5000/api/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+Content-Type: application/json
+
+{
+  "content":"I have the same problem.",
+  "issue_id":16
+}
+###
+POST http://127.0.0.1:5000/api/comments/reply
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+Content-Type: application/json
+
+{
+  "content":"Same issue here.",
+  "issue_id":16,
+  "parent_id":5
+}
+###
+GET http://127.0.0.1:5000/api/comments/issue/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+###
+DELETE http://127.0.0.1:5000/api/comments/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+###
+POST http://127.0.0.1:5000/api/supports/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNjc2MiwianRpIjoiMTgwZTJjODctZjJkMy00ZTBmLTkyMGMtOTFjZWM2OWEyYTZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3ODU0MDY3NjIsImNzcmYiOiJiYWU4ZWRiMy05ZTg4LTRiNTUtYWViYi03MTdjMDVkYzg2NzAiLCJleHAiOjE3ODU0MDc2NjIsInJvbGUiOiJVc2VyIn0.k05jyN5nP0Cy96GB00PSICF25leAhMntOy5ow9Al0nM
+###
+GET http://127.0.0.1:5000/api/supports/16
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNTQyNiwianRpIjoiNjVhMDcxNDItMWRhNi00ZDI3LWIwYTMtZTRmYzgzMjllOWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDU0MjYsImNzcmYiOiJlYzZjMjE1OC1lNzZkLTRkYWEtOTg2My1jYzIwNWFkZGE3NDkiLCJleHAiOjE3ODU0MDYzMjYsInJvbGUiOiJVc2VyIn0.PL_Y-Jh-fnV5XMYOkyVm6ZJ149pYOIp4eXHtkXpPllI
+###
+GET http://127.0.0.1:5000/api/notifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNjgwNCwianRpIjoiY2Y1MjViYjctMGYwYi00ZTUyLTk1YzUtM2ZkNTE3NDJiYjFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDY4MDQsImNzcmYiOiJiZjhmNWI0Zi1hOGVmLTRmOTUtYTcwYi01YmFlZjBiNzZhZDYiLCJleHAiOjE3ODU0MDc3MDQsInJvbGUiOiJVc2VyIn0.uxURkp5yGWtMnGll0Pun2sj2cbsRw59LlocSLI0NA5Y
+###
+###
+PATCH http://127.0.0.1:5000/api/notifications/12/read
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNjgwNCwianRpIjoiY2Y1MjViYjctMGYwYi00ZTUyLTk1YzUtM2ZkNTE3NDJiYjFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDY4MDQsImNzcmYiOiJiZjhmNWI0Zi1hOGVmLTRmOTUtYTcwYi01YmFlZjBiNzZhZDYiLCJleHAiOjE3ODU0MDc3MDQsInJvbGUiOiJVc2VyIn0.uxURkp5yGWtMnGll0Pun2sj2cbsRw59LlocSLI0NA5Y
+###
+GET http://127.0.0.1:5000/api/dashboard/overview
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NTQwNjgwNCwianRpIjoiY2Y1MjViYjctMGYwYi00ZTUyLTk1YzUtM2ZkNTE3NDJiYjFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjUiLCJuYmYiOjE3ODU0MDY4MDQsImNzcmYiOiJiZjhmNWI0Zi1hOGVmLTRmOTUtYTcwYi01YmFlZjBiNzZhZDYiLCJleHAiOjE3ODU0MDc3MDQsInJvbGUiOiJVc2VyIn0.uxURkp5yGWtMnGll0Pun2sj2cbsRw59LlocSLI0NA5Y
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+  "name":"Test Company2",
+  "email":"company2@test.com",
+  "password":"Password123"
+}
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+    "name": "Test Company",
+    "email": "company@example.com",
+    "password": "Password123"
+}
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+  "email":"company2@test.com",
+  "password":"Password123"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMTk0NiwianRpIjoiMjRjMmI3NDQtM2RlMy00MmQ3LWJmNzQtMDgwYWE0MzMxYWNiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6OCIsIm5iZiI6MTc4NjAzMTk0NiwiY3NyZiI6ImRmZjU4ZGUxLWNlYmYtNDYzYy1hNzZkLWJiZTM1YWEwYjgxYiIsImV4cCI6MTc4NjAzMjg0Niwicm9sZSI6IkNvbXBhbnkifQ.pawfGomLsN-R6-wymJ9mJOUAMLoCSg_4bcjkhMjrErQ
+###
+GET http://127.0.0.1:5000/api/admin/dashboard/overview
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+###
+GET http://127.0.0.1:5000/api/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+
+###
+PATCH http://127.0.0.1:5000/api/admin/users/5/block
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+
+###
+GET http://127.0.0.1:5000/api/admin/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/5/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+Content-Type: application/json
+
+{
+  "status":"Resolved"
+}
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/5/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+
+###
+PATCH http://127.0.0.1:5000/api/admin/issues/5/restore
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+###
+GET http://127.0.0.1:5000/api/admin/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+###
+GET http://127.0.0.1:5000/api/admin/logs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0

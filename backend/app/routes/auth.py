@@ -1,3 +1,5 @@
+from unittest import result
+
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
@@ -39,15 +41,10 @@ def login():
     email = data.get("email")
     password = data.get("password")
 
-    result = login_user(
-        email,
-        password
-    )
+    result = login_user(email, password)
 
-    if result["success"]:
-        return jsonify(result), 200
+    return jsonify(result), result.get("status_code", 200)
 
-    return jsonify(result), 401
 @auth_bp.route("/profile", methods=["GET"])
 @jwt_required()
 def profile():

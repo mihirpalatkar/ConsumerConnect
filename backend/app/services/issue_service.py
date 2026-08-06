@@ -4,6 +4,7 @@ from datetime import datetime
 from app.ai.duplicate_detector import find_duplicate
 from app.ai.category_classifier import classify_issue
 from app.ai.predictor import predict_complaint
+from app.services.history_service import create_history
 
 def create_issue(
     title,
@@ -13,10 +14,8 @@ def create_issue(
     user_id,
     image_url=None
 ):
-    duplicate = find_duplicate(
-    title,
-    description
-    )
+
+    duplicate = find_duplicate(title, description)
 
     if duplicate:
         return {
@@ -30,26 +29,25 @@ def create_issue(
             },
             "status_code": 409
         }
-    # Auto-detect category if not provided
+
+    title = title.strip()
+    description = description.strip()
+    company = company.strip()
+
+    ai_result = predict_complaint(
+        complaint=description,
+        support_count=0,
+        images_attached=1 if image_url else 0
+    )
+
     if not category:
-        ai_result = predict_complaint(
-            complaint=description,
-            support_count=0,
-            images_attached=1 if image_url else 0
-        )
-
-        title = title.strip()
-        description = description.strip()
-        company = company.strip()
-
         category = ai_result["sector"].strip()
-        severity = ai_result["severity"].strip()
 
-        resolution_days = ai_result["resolution_days"]
-        print("AI RESULT:", ai_result)
+    severity = ai_result["severity"].strip()
+    resolution_days = ai_result["resolution_days"]
+    spam = ai_result["spam"]
 
-        spam = ai_result["spam"]
-        issue = Issue(
+    issue = Issue(
         title=title,
         description=description,
         company=company,
@@ -62,6 +60,12 @@ def create_issue(
 
     db.session.add(issue)
     db.session.commit()
+    create_history(
+        issue_id=issue.id,
+        action="created",
+        performed_by="User",
+        message="Complaint created successfully."
+    )
 
     return {
         "issue": issue,
@@ -72,11 +76,9 @@ def create_issue(
             "spam": spam
         }
     }
-
-
 def get_all_issues(page=1, limit=10, sort="latest"):
 
-    query = Issue.query
+    query = Issue.query.filter_by(is_deleted=False).filter_by(is_deleted=False)
 
     if sort == "latest":
         query = query.order_by(Issue.created_at.desc())
@@ -96,11 +98,14 @@ def get_all_issues(page=1, limit=10, sort="latest"):
 
 
 def get_issue_by_id(issue_id):
-    return Issue.query.get(issue_id)
+    return Issue.query.filter_by(
+    id=issue_id,
+    is_deleted=False
+).first()
 
 
 def update_issue(issue_id, user_id, data):
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return {
@@ -136,6 +141,13 @@ def update_issue(issue_id, user_id, data):
 
     db.session.commit()
 
+    create_history(
+        issue_id=issue.id,
+        action="updated",
+        performed_by="User",
+        message="Complaint details were updated."
+    )
+
     return {
         "success": True,
         "status_code": 200,
@@ -145,7 +157,7 @@ def update_issue(issue_id, user_id, data):
 
 
 def delete_issue(issue_id, user_id):
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return {
@@ -161,8 +173,15 @@ def delete_issue(issue_id, user_id):
             "message": "You are not authorized to delete this issue"
         }
 
-    db.session.delete(issue)
+    issue.is_deleted = True
     db.session.commit()
+
+    create_history(
+        issue_id=issue.id,
+        action="deleted",
+        performed_by="User",
+        message="Complaint was deleted."
+    )
 
     return {
         "success": True,
@@ -171,7 +190,7 @@ def delete_issue(issue_id, user_id):
     }
 def search_issues(search=None, company=None, category=None, status=None, severity=None):
 
-    query = Issue.query
+    query = Issue.query.filter_by(is_deleted=False).filter_by(is_deleted=False)
 
     if search:
         query = query.filter(
@@ -201,7 +220,7 @@ def search_issues(search=None, company=None, category=None, status=None, severit
     return query.all()
 def update_issue_status(issue_id, user_id, status, resolution_note=None):
 
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return {

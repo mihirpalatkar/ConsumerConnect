@@ -6,7 +6,7 @@ from app.services.notification_service import create_notification
 
 def create_comment(content, issue_id, user_id):
 
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return None
@@ -35,8 +35,10 @@ def create_comment(content, issue_id, user_id):
     return comment
 
 def get_comments(issue_id):
-    return Comment.query.filter_by(issue_id=issue_id).all()
-
+    return Comment.query.filter_by(
+        issue_id=issue_id,
+        is_deleted=False
+    ).all()
 
 def delete_comment(comment_id, user_id):
     comment = Comment.query.get(comment_id)
@@ -57,7 +59,7 @@ def delete_comment(comment_id, user_id):
 
     issue = Issue.query.get(comment.issue_id)
 
-    db.session.delete(comment)
+    comment.is_deleted = True
     db.session.flush()
 
     issue.trending_score = calculate_trending_score(issue)
@@ -72,7 +74,10 @@ def delete_comment(comment_id, user_id):
 
 def reply_to_comment(content, issue_id, user_id, parent_id):
 
-    parent_comment = Comment.query.get(parent_id)
+    parent_comment = Comment.query.filter_by(
+    id=parent_id,
+    is_deleted=False
+    ).first()
 
     if not parent_comment:
         return {
@@ -81,7 +86,7 @@ def reply_to_comment(content, issue_id, user_id, parent_id):
             "message": "Parent comment not found"
         }
 
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     reply = Comment(
         content=content,

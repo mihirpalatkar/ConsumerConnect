@@ -27,6 +27,12 @@ class Comment(db.Model):
         onupdate=datetime.utcnow
     )
 
+    is_deleted = db.Column(
+        db.Boolean,
+        default=False,
+        nullable=False
+    )
+
     issue_id = db.Column(
         db.Integer,
         db.ForeignKey("issues.id"),

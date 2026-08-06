@@ -87,11 +87,18 @@ class Issue(db.Model):
         nullable=True
     )
 
+    is_deleted = db.Column(
+        db.Boolean,
+        default=False,
+        nullable=False
+    )
+
     user_id = db.Column(
         db.Integer,
         db.ForeignKey("users.id"),
         nullable=False
     )
+
 
     # ---------------- Relationships ----------------
 

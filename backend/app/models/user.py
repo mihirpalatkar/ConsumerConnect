@@ -35,6 +35,12 @@ class User(db.Model):
         default=datetime.utcnow
     )
 
+    is_blocked = db.Column(
+        db.Boolean,
+        default=False,
+        nullable=False
+    )
+
     # One User -> Many Issues
     issues = db.relationship(
         "Issue",

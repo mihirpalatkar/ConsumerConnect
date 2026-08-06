@@ -1,6 +1,5 @@
 from sqlalchemy import func
 from sqlalchemy import extract
-from sqlalchemy import case
 
 from app.extensions import db
 from app.models.issue import Issue

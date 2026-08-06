@@ -6,7 +6,7 @@ from app.services.notification_service import create_notification
 
 
 def toggle_support(issue_id, user_id):
-    issue = Issue.query.get(issue_id)
+    issue = db.session.get(Issue, issue_id)
 
     if not issue:
         return {

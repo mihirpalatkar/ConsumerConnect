@@ -18,21 +18,47 @@ def register():
 
     data = request.get_json()
 
+    required_fields = [
+        "name",
+        "email",
+        "password"
+    ]
+
+    for field in required_fields:
+        if field not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{field} is required."
+            }), 400
+
     company = register_company(
-        name=data.get("name"),
-        email=data.get("email"),
-        password=data.get("password")
+        data["name"],
+        data["email"],
+        data["password"]
     )
 
-    if not company:
+    if company is None:
         return jsonify({
             "success": False,
-            "message": "Company already exists"
+            "message": "Company already exists."
         }), 400
+
+    access_token = create_access_token(
+        identity=f"company:{company.id}",
+        additional_claims={
+            "role": "Company"
+        }
+    )
 
     return jsonify({
         "success": True,
-        "message": "Company registered successfully"
+        "message": "Company registered successfully.",
+        "access_token": access_token,
+        "company": {
+            "id": company.id,
+            "name": company.name,
+            "email": company.email
+        }
     }), 201
 
 
@@ -41,20 +67,46 @@ def login():
 
     data = request.get_json()
 
+    required_fields = [
+        "email",
+        "password"
+    ]
+
+    for field in required_fields:
+        if field not in data:
+            return jsonify({
+                "success": False,
+                "message": f"{field} is required."
+            }), 400
+
     company = authenticate_company(
-        email=data.get("email"),
-        password=data.get("password")
+        data["email"],
+        data["password"]
     )
 
-    if not company:
+    if isinstance(company, dict):
+        return jsonify(company), company.get("status_code", 401)
+
+    if company is None:
         return jsonify({
             "success": False,
-            "message": "Invalid credentials"
+            "message": "Invalid email or password."
         }), 401
 
-    token = create_access_token(identity=f"company:{company.id}")
+    access_token = create_access_token(
+        identity=f"company:{company.id}",
+        additional_claims={
+            "role": "Company"
+        }
+    )
 
     return jsonify({
         "success": True,
-        "access_token": token
+        "message": "Login successful.",
+        "access_token": access_token,
+        "company": {
+            "id": company.id,
+            "name": company.name,
+            "email": company.email
+        }
     }), 200

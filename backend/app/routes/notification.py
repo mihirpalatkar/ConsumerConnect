@@ -17,7 +17,7 @@ notification_bp = Blueprint(
 @jwt_required()
 def notifications():
 
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
 
     notifications = get_notifications(user_id)
 
@@ -41,7 +41,7 @@ def notifications():
 @jwt_required()
 def read_notification(notification_id):
 
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
 
     notification = mark_as_read(
         notification_id,
@@ -62,7 +62,7 @@ def read_notification(notification_id):
 @jwt_required()
 def read_all():
 
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
 
     count = mark_all_as_read(user_id)
 
@@ -74,7 +74,7 @@ def read_all():
 @jwt_required()
 def unread():
 
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
 
     count = get_unread_count(user_id)
 

@@ -5,3 +5,6 @@ from .support import Support
 from app.models.notification import Notification
 from .company_response import CompanyResponse
 from .company import Company
+from app.models.issue_history import IssueHistory
+from app.models.feedback import Feedback
+from app.models.admin_log import AdminLog
