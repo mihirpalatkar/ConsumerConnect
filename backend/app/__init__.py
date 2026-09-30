@@ -4,7 +4,7 @@ from flask import Flask, send_from_directory
 from flask_migrate import Migrate
 
 from config import Config
-from app.extensions import db, jwt
+from app.extensions import db, jwt, cors
 
 from app.routes.auth import auth_bp
 from app.routes.issue import issue_bp
@@ -37,6 +37,19 @@ def create_app():
 
     db.init_app(app)
     jwt.init_app(app)
+
+    cors.init_app(
+        app,
+        resources={
+            r"/api/*": {
+                "origins": [
+                    "http://localhost:3000",
+                    "http://127.0.0.1:3000",
+                ]
+            }
+        },
+    )
+
     migrate.init_app(app, db)
 
     app.register_blueprint(auth_bp)
@@ -58,11 +71,17 @@ def create_app():
 
     @app.route("/")
     def home():
-        return {"message": "ConsumerConnect Backend Running", "status": "success"}
+        return {
+            "message": "ConsumerConnect Backend Running",
+            "status": "success",
+        }
 
     @app.route("/uploads/<filename>")
     def uploaded_file(filename):
-        return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
+        return send_from_directory(
+            app.config["UPLOAD_FOLDER"],
+            filename,
+        )
 
     print("\n===== REGISTERED ROUTES =====")
     for rule in sorted(app.url_map.iter_rules(), key=lambda r: str(r)):

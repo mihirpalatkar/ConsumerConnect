@@ -1337,3 +1337,56 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsI
 ###
 GET http://127.0.0.1:5000/api/admin/logs
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NjAzMjQ0MiwianRpIjoiZDg0YWE1MTQtZWEyOS00MmI2LTg4NGEtZWU0ZjJmNTNmNzZlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3ODYwMzI0NDIsImNzcmYiOiIyNmUzYjg0YS0yYWVmLTQ4OWItYTYzMC1mM2NkNWU0YzcyYmEiLCJleHAiOjE3ODYwMzMzNDIsInJvbGUiOiJBZG1pbiJ9._0XiYDzU_hg5JeGSv5WEJQbPiXj1X_w-B3048Y4uaA0
+###
+POST http://127.0.0.1:5000/api/company/register
+Content-Type: application/json
+
+{
+  "name": "Apple",
+  "email": "apple@consumerconnect.com",
+  "password": "Apple@123"
+}
+
+###
+POST http://127.0.0.1:5000/api/company/login
+Content-Type: application/json
+
+{
+  "email": "apple@consumerconnect.com",
+  "password": "Apple@123"
+}
+###
+GET http://127.0.0.1:5000/api/company/dashboard/issues
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2Njg0NiwianRpIjoiMzhlMjgzMDktZjAxZi00N2E3LTk3MDktMjRjYTRhNDViNTQ0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6OSIsIm5iZiI6MTc4NzU2Njg0NiwiY3NyZiI6Ijc3MDM1Y2IwLTBhZjAtNGY1ZS05MmEyLTczMTJjNDQ1NWNkMCIsImV4cCI6MTc4NzU2Nzc0Niwicm9sZSI6IkNvbXBhbnkifQ._a6Lw6zZ_rdRIsqrjpXhlPbps2YzbO3jjFG99qmzT0M
+###
+POST http://127.0.0.1:5000/api/company/responses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2Njg0NiwianRpIjoiMzhlMjgzMDktZjAxZi00N2E3LTk3MDktMjRjYTRhNDViNTQ0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNvbXBhbnk6OSIsIm5iZiI6MTc4NzU2Njg0NiwiY3NyZiI6Ijc3MDM1Y2IwLTBhZjAtNGY1ZS05MmEyLTczMTJjNDQ1NWNkMCIsImV4cCI6MTc4NzU2Nzc0Niwicm9sZSI6IkNvbXBhbnkifQ._a6Lw6zZ_rdRIsqrjpXhlPbps2YzbO3jjFG99qmzT0M
+Content-Type: application/json
+
+{
+  "issue_id": 19,
+  "response": "We have received your complaint and our team is investigating the issue. We will work to resolve it as soon as possible."
+}
+###
+POST http://127.0.0.1:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@CC.org",
+  "password": "testuser"
+}
+###
+GET http://127.0.0.1:5000/api/notifications
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2NzE1NywianRpIjoiZDNlODQxMjktMzRjYy00NWZiLWIxNGYtZjg2NGI3ZGQ3YjA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjciLCJuYmYiOjE3ODc1NjcxNTcsImNzcmYiOiIyMTc4MDQwMC02NTQzLTQ5ZGUtOGRkZS01Nzg3YmFjYWI2NjIiLCJleHAiOjE3ODc1NjgwNTcsInJvbGUiOiJVc2VyIn0.3gxiqMJmCuXVxykorre85LG9NNkm0hfTDTfM8dIMunc
+###
+GET http://127.0.0.1:5000/api/company/responses/19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2NzE1NywianRpIjoiZDNlODQxMjktMzRjYy00NWZiLWIxNGYtZjg2NGI3ZGQ3YjA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjciLCJuYmYiOjE3ODc1NjcxNTcsImNzcmYiOiIyMTc4MDQwMC02NTQzLTQ5ZGUtOGRkZS01Nzg3YmFjYWI2NjIiLCJleHAiOjE3ODc1NjgwNTcsInJvbGUiOiJVc2VyIn0.3gxiqMJmCuXVxykorre85LG9NNkm0hfTDTfM8dIMunc
+###
+GET http://127.0.0.1:5000/api/comments/issue/19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2NzE1NywianRpIjoiZDNlODQxMjktMzRjYy00NWZiLWIxNGYtZjg2NGI3ZGQ3YjA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjciLCJuYmYiOjE3ODc1NjcxNTcsImNzcmYiOiIyMTc4MDQwMC02NTQzLTQ5ZGUtOGRkZS01Nzg3YmFjYWI2NjIiLCJleHAiOjE3ODc1NjgwNTcsInJvbGUiOiJVc2VyIn0.3gxiqMJmCuXVxykorre85LG9NNkm0hfTDTfM8dIMunc
+###
+GET http://127.0.0.1:5000/api/supports/19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU2NzE1NywianRpIjoiZDNlODQxMjktMzRjYy00NWZiLWIxNGYtZjg2NGI3ZGQ3YjA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjciLCJuYmYiOjE3ODc1NjcxNTcsImNzcmYiOiIyMTc4MDQwMC02NTQzLTQ5ZGUtOGRkZS01Nzg3YmFjYWI2NjIiLCJleHAiOjE3ODc1NjgwNTcsInJvbGUiOiJVc2VyIn0.3gxiqMJmCuXVxykorre85LG9NNkm0hfTDTfM8dIMunc
+###
+GET http://127.0.0.1:5000/api/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc4NzU3NDA2OSwianRpIjoiNWY5OGM3MGYtZmMxNS00YTU4LTk5OWYtZDY3NmRlMGRmMThhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjciLCJuYmYiOjE3ODc1NzQwNjksImNzcmYiOiI5YjJlMzA5NS1iOWQwLTQyZTctYTJkYy01OWIxOGY4NzQ0ODkiLCJleHAiOjE3ODc1NzQ5NjksInJvbGUiOiJVc2VyIn0.PSBx6tQOz8uqqfZyfPp31h1F0zxfIbGRPmhK67kgjd4

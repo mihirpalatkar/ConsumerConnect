@@ -1,55 +1,132 @@
+from flask import Blueprint, jsonify, request
+from flask_jwt_extended import (
+    jwt_required,
+    get_jwt_identity,
+)
 
-from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity
-
-from app.services.auth_service import register_user, login_user
-
-auth_bp = Blueprint("auth", __name__, url_prefix="/api/auth")
+from app.services.auth_service import (
+    register_user,
+    login_user,
+)
 
 
-@auth_bp.route("/register", methods=["POST"])
+auth_bp = Blueprint(
+    "auth",
+    __name__,
+    url_prefix="/api/auth",
+)
+
+
+# ============================================================
+# REGISTER
+# ============================================================
+
+@auth_bp.route(
+    "/register",
+    methods=["POST"],
+)
 def register():
 
-    data = request.get_json()
+    data = (
+        request.get_json(
+            silent=True
+        )
+        or {}
+    )
 
-    name = data.get("name")
-    email = data.get("email")
-    password = data.get("password")
+    name = data.get(
+        "name"
+    )
 
-    result = register_user(name, email, password)
+    email = data.get(
+        "email"
+    )
 
-    if result["success"]:
-        return jsonify(result), 201
+    password = data.get(
+        "password"
+    )
 
-    return jsonify(result), 400
+    result = register_user(
+        name,
+        email,
+        password,
+    )
+
+    if result.get(
+        "success"
+    ):
+        return jsonify(
+            result
+        ), 201
+
+    return jsonify(
+        result
+    ), result.get(
+        "status_code",
+        400,
+    )
 
 
-@auth_bp.route("/login", methods=["POST"])
+# ============================================================
+# LOGIN
+# ============================================================
+
+@auth_bp.route(
+    "/login",
+    methods=["POST"],
+)
 def login():
 
-    data = request.get_json()
+    data = (
+        request.get_json(
+            silent=True
+        )
+        or {}
+    )
 
-    email = data.get("email")
-    password = data.get("password")
+    email = data.get(
+        "email"
+    )
 
-    result = login_user(email, password)
+    password = data.get(
+        "password"
+    )
 
-    return jsonify(result), result.get("status_code", 200)
+    result = login_user(
+        email,
+        password,
+    )
+
+    return jsonify(
+        result
+    ), result.get(
+        "status_code",
+        200,
+    )
 
 
-@auth_bp.route("/profile", methods=["GET"])
+# ============================================================
+# PROFILE
+# ============================================================
+
+@auth_bp.route(
+    "/profile",
+    methods=["GET"],
+)
 @jwt_required()
 def profile():
 
-    current_user = get_jwt_identity()
+    current_user = (
+        get_jwt_identity()
+    )
 
     return (
-        jsonify(
-            {
-                "success": True,
-                "message": "Protected route accessed successfully",
-                "user_id": current_user,
-            }
-        ),
+        jsonify({
+            "success": True,
+            "message": (
+                "Protected route accessed successfully"
+            ),
+            "user_id": current_user,
+        }),
         200,
     )

@@ -1,20 +1,46 @@
 # Python
+.venv/
+venv/
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
-*.pyd
 
-# Virtual Environment
-backend/.venv/
+# Environment / secrets
+.env
+.env.*
+!.env.example
 
-# Environment Variables
-backend/.env
+# Flask uploads / generated files
+uploads/
+instance/
 
-# VS Code
-.vscode/
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+build/
 
-# macOS
+# Logs
+*.log
+
+# OS / editor
 .DS_Store
-
-# Windows
 Thumbs.db
+.vscode/
+.idea/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+frontend.zip

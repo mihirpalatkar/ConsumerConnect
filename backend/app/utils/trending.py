@@ -3,14 +3,71 @@ from datetime import datetime
 
 def calculate_trending_score(issue):
     """
-    Calculate the trending score for an issue.
+    Calculate the current trending score.
+
+    Formula:
+
+        Supports * 5
+        + Comments * 3
+        - Age in days * 0.5
+
+    The score is never negative.
     """
 
-    support_count = len(issue.supports)
-    comment_count = len(issue.comments)
+    supports = getattr(
+        issue,
+        "supports",
+        [],
+    ) or []
 
-    age_days = (datetime.utcnow() - issue.created_at).days
+    comments = getattr(
+        issue,
+        "comments",
+        [],
+    ) or []
 
-    score = support_count * 5 + comment_count * 3 - age_days * 0.5
+    support_count = len(
+        supports
+    )
 
-    return max(score, 0)
+    comment_count = sum(
+        1
+        for comment in comments
+        if not getattr(
+            comment,
+            "is_deleted",
+            False,
+        )
+    )
+
+    created_at = getattr(
+        issue,
+        "created_at",
+        None,
+    )
+
+    if created_at is None:
+        age_days = 0
+    else:
+        age_seconds = max(
+            (
+                datetime.utcnow()
+                - created_at
+            ).total_seconds(),
+            0,
+        )
+
+        age_days = (
+            age_seconds / 86400
+        )
+
+    score = (
+        support_count * 5
+        + comment_count * 3
+        - age_days * 0.5
+    )
+
+    return round(
+        max(score, 0),
+        2,
+    )
